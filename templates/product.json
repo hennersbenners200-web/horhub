@@ -58,7 +58,7 @@
             "heading": "Installation",
             "icon": "wrench",
             "source": "custom",
-            "content": "<p>Mount the horn unit in the engine bay, connect it to 12V power using the included harness and inline fuse, then pair the wireless button and app. Most installs take 30–60 minutes with basic hand tools. The included guide walks you through every step, and our support team can help if you get stuck.</p>"
+            "content": "<p>Fit the horn unit in the engine bay and connect it to your car's 12V supply. It's designed to work alongside your existing horn, which keeps working as normal. If you're not confident with car electrics, any auto electrician can fit it for you.</p>"
           }
         },
         "collapsible-3": {
@@ -106,8 +106,8 @@
           "settings": {
             "placeholder_file": "step-1-connect.jpg",
             "title": "Connect",
-            "text": "Download the app and pair your horn unit and wireless button.",
-            "time": "2 min"
+            "text": "Plug in via USB and copy across the MP3 or WAV sounds you want.",
+            "time": ""
           }
         },
         "how-it-works-step-2": {
@@ -115,8 +115,8 @@
           "settings": {
             "placeholder_file": "step-2-choose-sound.jpg",
             "title": "Choose your sound",
-            "text": "Pick from the built-in library or load your own clips, then assign them to the button.",
-            "time": "5 min"
+            "text": "Pick your favourite sounds for the buttons on your wireless remote.",
+            "time": ""
           }
         },
         "how-it-works-step-3": {
@@ -124,8 +124,8 @@
           "settings": {
             "placeholder_file": "step-3-install.jpg",
             "title": "Install",
-            "text": "Mount the unit under the bonnet and connect it to 12V power with the included harness.",
-            "time": "30–60 min"
+            "text": "Fit the horn unit and connect it to your car's 12V supply, alongside your existing horn.",
+            "time": ""
           }
         },
         "how-it-works-step-4": {
@@ -133,8 +133,8 @@
           "settings": {
             "placeholder_file": "step-4-use-it.jpg",
             "title": "Use it",
-            "text": "Place the wireless button within reach. Tap once, and your sound plays.",
-            "time": "Instant"
+            "text": "Keep the remote within reach. Press a button and your sound plays.",
+            "time": ""
           }
         }
       },
@@ -226,12 +226,12 @@
           "settings": {
             "title": "Your own",
             "icon": "phone",
-            "sound_1_name": "Record a clip",
-            "sound_1_meta": "Your voice, your catchphrase",
-            "sound_2_name": "Upload an audio file",
-            "sound_2_meta": "Any short clip from your phone",
-            "sound_3_name": "Trim and preview",
-            "sound_3_meta": "Get the timing just right"
+            "sound_1_name": "Your voice",
+            "sound_1_meta": "Record a catchphrase and save it as an MP3",
+            "sound_2_name": "Any MP3 or WAV",
+            "sound_2_meta": "Copy it across via USB",
+            "sound_3_name": "",
+            "sound_3_meta": ""
           }
         }
       },
@@ -260,7 +260,7 @@
         "comparison-row-2": {
           "type": "row",
           "settings": {
-            "feature": "Change sounds from your phone",
+            "feature": "Load your own MP3 or WAV files",
             "them": false,
             "us": true
           }
@@ -268,7 +268,7 @@
         "comparison-row-3": {
           "type": "row",
           "settings": {
-            "feature": "Wireless button you can place anywhere",
+            "feature": "Wireless remote within easy reach",
             "them": false,
             "us": true
           }
@@ -276,7 +276,7 @@
         "comparison-row-4": {
           "type": "row",
           "settings": {
-            "feature": "Load your own audio clips",
+            "feature": "Multiple sounds on one remote",
             "them": false,
             "us": true
           }
@@ -292,7 +292,7 @@
         "comparison-row-6": {
           "type": "row",
           "settings": {
-            "feature": "DIY install with included harness",
+            "feature": "Change your sound whenever you want",
             "them": false,
             "us": true
           }
@@ -341,7 +341,7 @@
             "placeholder": true,
             "rating": 5,
             "title": "Placeholder: build quality",
-            "body": "<p>Replace this with a real review about build quality, the wireless button or the app.</p>",
+            "body": "<p>Replace this with a real review about build quality, the volume or the wireless remote.</p>",
             "author": "Sample customer",
             "detail": "Car model · Location"
           }
@@ -364,42 +364,42 @@
           "type": "question",
           "settings": {
             "question": "Will HornHub work with my car?",
-            "answer": "<p>HornHub is designed for vehicles with a standard 12V electrical system, which covers most cars, vans and pickups. If you're unsure, contact us with your make, model and year before ordering and we'll confirm.</p>"
+            "answer": "<p>HornHub is designed for vehicles with a 12V electrical system, which covers most cars, vans and pickups. If you're unsure, contact us with your make, model and year before ordering and we'll confirm.</p>"
           }
         },
         "faq-question-2": {
           "type": "question",
           "settings": {
             "question": "How hard is it to install?",
-            "answer": "<p>If you can locate your battery and use a screwdriver, you can install HornHub. The kit includes a wiring harness, inline fuse and a step-by-step guide. Most installs take 30–60 minutes. If you'd rather not do it yourself, any auto electrician can fit it quickly.</p>"
+            "answer": "<p>HornHub is designed for simple installation. It connects to your car's 12V supply and works alongside your existing horn. If you're not confident with car electrics, any auto electrician can fit it for you.</p>"
           }
         },
         "faq-question-3": {
           "type": "question",
           "settings": {
-            "question": "How does the wireless button connect?",
-            "answer": "<p>The button pairs wirelessly with the horn unit, so there are no cables to run into the cabin. Pairing takes a minute during setup and the button reconnects automatically after that.</p>"
+            "question": "How does the wireless remote work?",
+            "answer": "<p>The 4-button remote talks to the horn unit wirelessly, so there are no cables to run into the cabin. Press a button and the sound you've chosen plays instantly.</p>"
           }
         },
         "faq-question-4": {
           "type": "question",
           "settings": {
             "question": "What powers it?",
-            "answer": "<p>The horn unit runs from your car's 12V supply using the included harness and fuse. The wireless button uses a replaceable coin-cell battery.</p>"
+            "answer": "<p>The horn unit runs from your car's 12V electrical supply.</p>"
           }
         },
         "faq-question-5": {
           "type": "question",
           "settings": {
             "question": "Can I use my own sounds?",
-            "answer": "<p>Yes. Choose from the built-in library or load your own short audio clips through the app, then assign them to the button. You can change sounds as often as you like.</p>"
+            "answer": "<p>Yes, that's the whole point. Load your own MP3 or WAV files via USB and trigger them from the wireless remote. Change them as often as you like.</p>"
           }
         },
         "faq-question-6": {
           "type": "question",
           "settings": {
-            "question": "Is it waterproof?",
-            "answer": "<p>The horn unit has a weather-sealed housing designed for the engine bay, where it's exposed to rain and road spray. It isn't designed to be submerged, and we recommend mounting it away from direct water jets when pressure washing.</p>"
+            "question": "Where should I mount it?",
+            "answer": "<p>Mount the horn unit in a protected spot in the engine bay, away from direct water spray and hot engine parts, and avoid pointing a pressure washer straight at it.</p>"
           }
         },
         "faq-question-7": {
@@ -413,7 +413,7 @@
           "type": "question",
           "settings": {
             "question": "Is it legal to use?",
-            "answer": "<p>Rules on vehicle horns and sound devices vary by country, state and region. In many places, horns may only be used to warn other road users, and some sounds or volumes are restricted on public roads. Please check your local regulations before installing or using HornHub. You are responsible for using it lawfully and considerately.</p>"
+            "answer": "<p>Rules on vehicle horns and sound devices vary by country, state and region. In many places, horns may only be used to warn other road users, and some sounds or volumes are restricted on public roads. HornHub is very loud (up to 130dB), so use it considerately and never near people's ears. Please check your local regulations before installing or using it. You are responsible for using it lawfully.</p>"
           }
         },
         "faq-question-9": {

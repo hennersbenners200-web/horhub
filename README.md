@@ -95,7 +95,7 @@ Every image slot shows a labelled placeholder with a **suggested filename, size 
 | Hero | `hero-hornhub-kit.jpg` | 1600 × 2000 |
 | Product showcase | `showcase-horn-unit.jpg` | 1800 × 1800 |
 | How it works (×4) | `step-1-connect.jpg` … `step-4-use-it.jpg` | 1200 × 900 |
-| Sound lab | `sound-app-in-hand.jpg` | 1800 × 1800 |
+| Sound lab | `sound-remote-in-hand.jpg` | 1800 × 1800 |
 | Lifestyle gallery (×5) | `lifestyle-night-meet.jpg` (large), plus four 1200 × 1500 tiles | see editor |
 | Final call to action | `final-cta-kit-contents.jpg` | 1600 × 1600 |
 
@@ -127,16 +127,14 @@ In the **Sound lab** section, each sound can have an audio file. Upload short MP
 
 ## 6. Before you launch: check every claim
 
-The copy was written for a typical product in this category. **Make sure every statement matches your actual product, supplier specs and policies**, and edit anything that doesn't:
+The copy matches the product description in your store: your own MP3/WAV sounds loaded via USB, a wireless 4-button remote, up to 130dB, 12V vehicles, installed alongside your existing horn. **Make sure these still match your supplier's specs and your policies**, and edit anything that doesn't:
 
 - [ ] **Shipping**: "Free tracked shipping", "dispatched within 1 working day" (announcement bar, trust strip, product page, FAQ, mobile menu)
 - [ ] **Returns**: "30-day returns" (and that your refund policy says the same)
 - [ ] **Warranty**: "12-month warranty"
-- [ ] **Compatibility**: "fits most 12V cars, vans and pickups"
-- [ ] **Install**: "30–60 minutes", "DIY install", "included harness and inline fuse"
-- [ ] **Hardware**: weather-sealed housing, coin-cell button battery, Bluetooth app, loading your own clips
-- [ ] **What's in the box** list (product page → *Specs & what's included*)
-- [ ] **Factory horn stays working**: only if HornHub installs alongside the original horn
+- [ ] **Product specs**: 130dB, MP3/WAV via USB, wireless 4-button remote, 12V, works alongside the existing horn
+- [ ] **What's in the box** (product page → *Specs & what's included*): currently lists only the horn unit and remote. Add the wiring, mounts, USB stick and so on if they're included.
+- [ ] **Compare-at ("was") price**: only use one if you genuinely sold at that price
 - [ ] **Horn-use notice**: edit in **Theme settings → Search engine & legal**. Horn laws vary by country and region, so the theme never claims the product is road legal.
 - [ ] Remove or replace all **placeholder reviews**
 

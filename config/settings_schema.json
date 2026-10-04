@@ -141,7 +141,7 @@
         "type": "text",
         "id": "seo_brand_description",
         "label": "Brand description for search engines",
-        "default": "HornHub makes wireless programmable car horns. Load your own sounds, pair the wireless button and swap your stock horn tone in minutes."
+        "default": "HornHub makes wireless programmable car horns. Load your own MP3 or WAV sounds and fire them from a wireless 4-button remote at up to 130dB."
       },
       {
         "type": "richtext",
