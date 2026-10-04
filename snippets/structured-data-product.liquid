@@ -1,0 +1,46 @@
+{%- liquid
+  assign rating = product.metafields.reviews.rating.value
+  assign rating_count = product.metafields.reviews.rating_count.value
+  assign product_url = request.origin | append: product.url
+-%}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": {{ product.title | json }},
+    "url": {{ product_url | json }},
+    {%- if product.featured_image %}
+    "image": [{{ product.featured_image | image_url: width: 1920 | prepend: 'https:' | json }}],
+    {%- endif %}
+    "description": {{ product.description | strip_html | strip | truncate: 5000 | json }},
+    {%- if product.selected_or_first_available_variant.sku != blank %}
+    "sku": {{ product.selected_or_first_available_variant.sku | json }},
+    {%- endif %}
+    {%- if product.selected_or_first_available_variant.barcode != blank %}
+    "gtin": {{ product.selected_or_first_available_variant.barcode | json }},
+    {%- endif %}
+    "brand": { "@type": "Brand", "name": {{ product.vendor | json }} },
+    {%- if rating != blank and rating_count > 0 %}
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": {{ rating.rating | json }},
+      "bestRating": {{ rating.scale_max | json }},
+      "worstRating": {{ rating.scale_min | json }},
+      "reviewCount": {{ rating_count | json }}
+    },
+    {%- endif %}
+    "offers": [
+      {%- for variant in product.variants -%}
+        {
+          "@type": "Offer",
+          {%- if variant.sku != blank %}"sku": {{ variant.sku | json }},{% endif %}
+          "name": {{ variant.title | json }},
+          "availability": "http://schema.org/{% if variant.available %}InStock{% else %}OutOfStock{% endif %}",
+          "price": {{ variant.price | divided_by: 100.00 | json }},
+          "priceCurrency": {{ cart.currency.iso_code | json }},
+          "url": {{ product_url | append: '?variant=' | append: variant.id | json }}
+        }{% unless forloop.last %},{% endunless %}
+      {%- endfor -%}
+    ]
+  }
+</script>

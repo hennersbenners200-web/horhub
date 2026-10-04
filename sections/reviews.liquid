@@ -1,0 +1,169 @@
+{%- comment -%}
+  Reviews. Use either:
+  - a reviews app block (recommended — real, verified reviews), or
+  - manual "Review" blocks for reviews you have permission to publish.
+  Blocks marked as placeholders are visibly labelled on the storefront so
+  sample content can never be mistaken for genuine customer feedback.
+{%- endcomment -%}
+{%- liquid
+  assign product = section.settings.product | default: product
+  assign rating = product.metafields.reviews.rating.value
+  assign rating_count = product.metafields.reviews.rating_count.value
+  assign has_placeholders = false
+  for block in section.blocks
+    if block.type == 'review' and block.settings.placeholder
+      assign has_placeholders = true
+    endif
+  endfor
+-%}
+<section class="section scheme-{{ section.settings.scheme }}" id="{{ section.settings.anchor | default: section.id }}" aria-labelledby="Heading-{{ section.id }}">
+  <div class="container">
+    <div class="section-head">
+      {%- if section.settings.eyebrow != blank -%}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+      <h2 class="h2" id="Heading-{{ section.id }}">{{ section.settings.heading }}</h2>
+    </div>
+
+    {%- if rating != blank -%}
+      <div class="reviews__summary">
+        <span class="reviews__score">{{ rating.rating | round: 1 }}</span>
+        <span>
+          {% render 'rating', rating: rating.rating, size: 'lg' %}
+          <span class="muted small reviews__count">{{ 'products.review_count' | t: count: rating_count }}</span>
+        </span>
+      </div>
+    {%- endif -%}
+
+    {%- if has_placeholders -%}
+      <p class="reviews__notice" role="note">
+        {% render 'icon', name: 'info' %}
+        <span>{{ 'sections.placeholder_reviews_notice' | t }}</span>
+      </p>
+    {%- endif -%}
+
+    {%- assign review_blocks = section.blocks | where: 'type', 'review' -%}
+    {%- if review_blocks.size > 0 -%}
+      <ul class="reviews__track" role="list">
+        {%- for block in review_blocks -%}
+          <li class="review" {{ block.shopify_attributes }}>
+            <div class="review__head">
+              {% render 'rating', rating: block.settings.rating %}
+              {%- if block.settings.placeholder -%}
+                <span class="badge badge--placeholder">{{ 'sections.placeholder' | t }}</span>
+              {%- endif -%}
+            </div>
+            {%- if block.settings.title != blank -%}<h3 class="review__title">{{ block.settings.title }}</h3>{%- endif -%}
+            <div class="review__body rte">{{ block.settings.body }}</div>
+            <div class="review__author">
+              <span class="review__avatar" aria-hidden="true">{{ block.settings.author | slice: 0 | upcase }}</span>
+              <span>
+                <strong>{{ block.settings.author }}</strong>
+                {%- if block.settings.detail != blank -%}<br><span class="review__meta">{{ block.settings.detail }}</span>{%- endif -%}
+              </span>
+              {%- if block.settings.verified and block.settings.placeholder == false -%}
+                <span class="review__verified">{% render 'icon', name: 'check-circle' %}{{ 'sections.verified_buyer' | t }}</span>
+              {%- endif -%}
+            </div>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+
+    {%- for block in section.blocks -%}
+      {%- if block.type == '@app' -%}
+        <div class="reviews__app" {{ block.shopify_attributes }}>{% render block %}</div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Reviews",
+  "tag": "div",
+  "max_blocks": 12,
+  "settings": [
+    {
+      "type": "select",
+      "id": "scheme",
+      "label": "Colour scheme",
+      "options": [
+        { "value": "dark", "label": "Dark" },
+        { "value": "surface", "label": "Dark grey" },
+        { "value": "light", "label": "Light" }
+      ],
+      "default": "surface"
+    },
+    { "type": "text", "id": "anchor", "label": "Anchor ID", "default": "reviews" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Reviews" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Heard it from the drivers." },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product for rating summary",
+      "info": "Shows the average rating your reviews app publishes. On product pages the current product is used automatically."
+    }
+  ],
+  "blocks": [
+    { "type": "@app" },
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "placeholder",
+          "label": "This is a placeholder review",
+          "default": true,
+          "info": "Placeholder reviews are labelled on the storefront. Untick only for a genuine review you have permission to publish."
+        },
+        { "type": "range", "id": "rating", "label": "Rating", "min": 1, "max": 5, "step": 1, "default": 5 },
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "richtext", "id": "body", "label": "Review" },
+        { "type": "text", "id": "author", "label": "Customer name", "default": "Sample customer" },
+        { "type": "text", "id": "detail", "label": "Detail (car, location)" },
+        { "type": "checkbox", "id": "verified", "label": "Verified purchase", "default": false }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reviews",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "placeholder": true,
+            "rating": 5,
+            "title": "Placeholder: install experience",
+            "body": "<p>Replace this with a real customer review about how easy installation was. Keep the reviewer's own words.</p>",
+            "author": "Sample customer",
+            "detail": "Car model · Location"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "placeholder": true,
+            "rating": 5,
+            "title": "Placeholder: favourite sound",
+            "body": "<p>Replace this with a real review describing the sounds a customer loves and the reactions they get.</p>",
+            "author": "Sample customer",
+            "detail": "Car model · Location"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "placeholder": true,
+            "rating": 5,
+            "title": "Placeholder: build quality",
+            "body": "<p>Replace this with a real review about build quality, the wireless button or the app.</p>",
+            "author": "Sample customer",
+            "detail": "Car model · Location"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

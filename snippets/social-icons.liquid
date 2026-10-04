@@ -1,0 +1,28 @@
+{%- comment -%} Social profile links, configured in Theme settings → Social media. {%- endcomment -%}
+{%- liquid
+  assign networks = 'instagram,tiktok,youtube,facebook,x' | split: ','
+  assign has_social = false
+  for network in networks
+    assign key = 'social_' | append: network
+    if settings[key] != blank
+      assign has_social = true
+    endif
+  endfor
+-%}
+{%- if has_social -%}
+  <ul class="social" role="list">
+    {%- for network in networks -%}
+      {%- assign key = 'social_' | append: network -%}
+      {%- if settings[key] != blank -%}
+        {%- assign icon_name = network -%}
+        {%- if network == 'x' -%}{%- assign icon_name = 'x-logo' -%}{%- endif -%}
+        <li>
+          <a href="{{ settings[key] }}" target="_blank" rel="noopener">
+            {% render 'icon', name: icon_name %}
+            <span class="visually-hidden">{{ 'general.social_link' | t: network: network | capitalize }}</span>
+          </a>
+        </li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+{%- endif -%}

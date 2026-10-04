@@ -1,0 +1,97 @@
+<section class="section scheme-{{ section.settings.scheme }}" aria-labelledby="Heading-{{ section.id }}">
+  <div class="container">
+    <div class="section-head">
+      {%- if section.settings.eyebrow != blank -%}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+      <h2 class="h2" id="Heading-{{ section.id }}">{{ section.settings.heading }}</h2>
+      {%- if section.settings.text != blank -%}<p class="lead">{{ section.settings.text }}</p>{%- endif -%}
+    </div>
+
+    <ul class="lifestyle__grid" role="list">
+      {%- for block in section.blocks -%}
+        <li class="lifestyle__tile" {{ block.shopify_attributes }}>
+          {%- liquid
+            if forloop.first
+              assign tile_sizes = '(min-width: 990px) 45vw, 100vw'
+            else
+              assign tile_sizes = '(min-width: 990px) 28vw, 50vw'
+            endif
+          -%}
+          {% render 'media',
+            image: block.settings.image,
+            alt: block.settings.alt,
+            sizes: tile_sizes,
+            file: block.settings.placeholder_file,
+            description: block.settings.alt
+          %}
+          {%- if block.settings.title != blank -%}
+            <div class="lifestyle__caption">
+              <strong>{{ block.settings.title }}</strong>
+              {%- if block.settings.caption != blank -%}<span>{{ block.settings.caption }}</span>{%- endif -%}
+            </div>
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+
+    {%- if section.settings.footer_text != blank or section.settings.footer_link_label != blank -%}
+      <div class="lifestyle__footer">
+        {%- if section.settings.footer_text != blank -%}<p class="muted">{{ section.settings.footer_text }}</p>{%- endif -%}
+        {%- if section.settings.footer_link_label != blank and section.settings.footer_link != blank -%}
+          <a class="link-arrow" href="{{ section.settings.footer_link }}">{{ section.settings.footer_link_label }} {% render 'icon', name: 'arrow-right' %}</a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Lifestyle gallery",
+  "tag": "div",
+  "max_blocks": 5,
+  "settings": [
+    {
+      "type": "select",
+      "id": "scheme",
+      "label": "Colour scheme",
+      "options": [
+        { "value": "dark", "label": "Dark" },
+        { "value": "surface", "label": "Dark grey" },
+        { "value": "light", "label": "Light" }
+      ],
+      "default": "dark"
+    },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Built for car culture" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Made for meets, cruises and the daily drive." },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Whether it's a slammed hatch, a weekend track toy or the family wagon, HornHub gives it a voice that matches the build." },
+    { "type": "text", "id": "footer_text", "label": "Footer text", "default": "Tag your install for a chance to be featured." },
+    { "type": "text", "id": "footer_link_label", "label": "Footer link label", "default": "Follow HornHub" },
+    { "type": "url", "id": "footer_link", "label": "Footer link", "info": "e.g. your Instagram or TikTok profile." }
+  ],
+  "blocks": [
+    {
+      "type": "tile",
+      "name": "Image tile",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "alt", "label": "Image description (alt text)", "default": "Modified car at a night meet" },
+        { "type": "text", "id": "placeholder_file", "label": "Suggested image filename", "default": "lifestyle.jpg" },
+        { "type": "text", "id": "title", "label": "Caption title" },
+        { "type": "text", "id": "caption", "label": "Caption text" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lifestyle gallery",
+      "blocks": [
+        { "type": "tile", "settings": { "alt": "Lowered hatchback at a night car meet under orange street lights, driver reaching for the HornHub button.", "placeholder_file": "lifestyle-night-meet.jpg (1600 × 2000px)", "title": "The meet", "caption": "Turn heads before you've even parked" } },
+        { "type": "tile", "settings": { "alt": "HornHub wireless button mounted on a steering wheel spoke, close-up.", "placeholder_file": "lifestyle-button-wheel.jpg (1200 × 1500px)", "title": "Within reach", "caption": "Button mounts where you want it" } },
+        { "type": "tile", "settings": { "alt": "Open bonnet showing the HornHub unit installed neatly beside the engine bay.", "placeholder_file": "lifestyle-engine-bay.jpg (1200 × 1500px)", "title": "Clean install", "caption": "Tucked away under the bonnet" } },
+        { "type": "tile", "settings": { "alt": "Two friends laughing in a parked car while one holds a phone showing the HornHub app.", "placeholder_file": "lifestyle-friends-app.jpg (1200 × 1500px)", "title": "Share the joke", "caption": "Swap sounds with a tap" } },
+        { "type": "tile", "settings": { "alt": "Sports car on an empty coastal road at golden hour, rear three-quarter view.", "placeholder_file": "lifestyle-coastal-drive.jpg (1200 × 1500px)", "title": "Daily driver", "caption": "Fun every single journey" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

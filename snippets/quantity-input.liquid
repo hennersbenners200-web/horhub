@@ -1,0 +1,22 @@
+{%- comment -%}
+  Quantity stepper. Enhanced by <quantity-input> in global.js.
+  Accepts: id, name, value, min, label (product/item title for screen readers), size ('sm'), line (cart line index)
+{%- endcomment -%}
+<quantity-input class="qty{% if size == 'sm' %} qty--sm{% endif %}">
+  <button type="button" name="minus" aria-label="{{ 'products.quantity_decrease' | t: title: label | escape }}">
+    {% render 'icon', name: 'minus' %}
+  </button>
+  <label class="visually-hidden" for="Quantity-{{ id }}">{{ 'products.quantity_for' | t: title: label | escape }}</label>
+  <input
+    id="Quantity-{{ id }}"
+    type="number"
+    inputmode="numeric"
+    name="{{ name }}"
+    value="{{ value }}"
+    min="{{ min | default: 1 }}"
+    {% if line %}data-line="{{ line }}"{% endif %}
+  >
+  <button type="button" name="plus" aria-label="{{ 'products.quantity_increase' | t: title: label | escape }}">
+    {% render 'icon', name: 'plus' %}
+  </button>
+</quantity-input>

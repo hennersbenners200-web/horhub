@@ -1,0 +1,30 @@
+{%- comment -%}
+  Product card for collections, search and recommendations.
+  Accepts: product, sizes (image sizes attribute), eager (boolean)
+{%- endcomment -%}
+{%- liquid
+  assign card_sizes = sizes | default: '(min-width: 990px) 33vw, 50vw'
+  assign variant = product.selected_or_first_available_variant
+-%}
+<article class="card">
+  <div class="card__media">
+    {%- if product.available == false -%}
+      <span class="badge badge--neutral card__badge">{{ 'products.sold_out' | t }}</span>
+    {%- elsif variant.compare_at_price > variant.price -%}
+      <span class="badge card__badge">{{ 'products.on_sale' | t }}</span>
+    {%- endif -%}
+    {% render 'media', image: product.featured_media.preview_image, alt: product.featured_media.alt, sizes: card_sizes, eager: eager, description: product.title %}
+    {%- if product.media[1] != blank -%}
+      {{ product.media[1].preview_image | image_url: width: 1100 | image_tag: sizes: card_sizes, widths: '375, 550, 750, 1100', loading: 'lazy', alt: '' }}
+    {%- endif -%}
+  </div>
+  <div>
+    <h3 class="card__title"><a href="{{ product.url }}">{{ product.title }}</a></h3>
+    {%- if product.metafields.reviews.rating.value != blank -%}
+      <div class="card__rating">
+        {% render 'rating', rating: product.metafields.reviews.rating.value.rating, count: product.metafields.reviews.rating_count.value %}
+      </div>
+    {%- endif -%}
+  </div>
+  {% render 'price', product: product %}
+</article>

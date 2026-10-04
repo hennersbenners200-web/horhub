@@ -1,0 +1,18 @@
+<section class="scheme-dark">
+  <div class="container not-found">
+    <p class="eyebrow">404</p>
+    <h1 class="h1">{{ 'general.404_title' | t }}</h1>
+    <p class="lead">{{ 'general.404_text' | t }}</p>
+    <div class="cta-row">
+      <a class="btn btn--primary btn--lg" href="{{ routes.all_products_collection_url }}">{{ 'products.shop_now' | t }}</a>
+      <a class="btn btn--secondary btn--lg" href="{{ routes.root_url }}">{{ 'general.back_home' | t }}</a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "404",
+  "tag": "div"
+}
+{% endschema %}

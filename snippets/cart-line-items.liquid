@@ -1,0 +1,54 @@
+{%- comment -%}
+  Cart line items, shared by the cart drawer and the cart page.
+  Quantity changes and removals are handled by <cart-items> in global.js,
+  with plain links as a no-JavaScript fallback.
+  Accepts: context ('drawer' or 'page') — used to keep input ids unique
+{%- endcomment -%}
+<ul class="cart-items" role="list" data-cart-items>
+  {%- for item in cart.items -%}
+    <li class="cart-item" id="CartItem-{{ context }}-{{ forloop.index }}">
+      <a class="cart-item__media" href="{{ item.url }}" tabindex="-1" aria-hidden="true">
+        {%- if item.image -%}
+          {{ item.image | image_url: width: 240 | image_tag: loading: 'lazy', alt: '', width: 120, height: 120 }}
+        {%- else -%}
+          {% render 'media', description: item.product.title %}
+        {%- endif -%}
+      </a>
+      <div>
+        <div class="cart-item__top">
+          <div>
+            <a class="cart-item__title" href="{{ item.url }}">{{ item.product.title }}</a>
+            {%- unless item.product.has_only_default_variant -%}
+              <p class="cart-item__variant">{{ item.variant.title }}</p>
+            {%- endunless -%}
+            {%- for property in item.properties -%}
+              {%- assign first_char = property.first | slice: 0 -%}
+              {%- if property.last != blank and first_char != '_' -%}
+                <p class="cart-item__variant">{{ property.first }}: {{ property.last }}</p>
+              {%- endif -%}
+            {%- endfor -%}
+            {%- if item.selling_plan_allocation -%}
+              <p class="cart-item__variant">{{ item.selling_plan_allocation.selling_plan.name }}</p>
+            {%- endif -%}
+          </div>
+          <div class="cart-item__price">
+            {%- if item.original_line_price > item.final_line_price -%}
+              <s>{{ item.original_line_price | money }}</s>
+            {%- endif -%}
+            {{ item.final_line_price | money }}
+          </div>
+        </div>
+        {%- for discount in item.line_level_discount_allocations -%}
+          <p class="cart-item__discount">{{ discount.discount_application.title }} (−{{ discount.amount | money }})</p>
+        {%- endfor -%}
+        <div class="cart-item__row">
+          {%- assign qty_id = context | append: '-' | append: forloop.index -%}
+          {% render 'quantity-input', id: qty_id, name: 'updates[]', value: item.quantity, min: 0, label: item.product.title, size: 'sm', line: forloop.index %}
+          <a class="cart-item__remove" href="{{ item.url_to_remove }}" data-remove-line="{{ forloop.index }}">
+            {{ 'cart.remove' | t }}<span class="visually-hidden">: {{ item.product.title }}</span>
+          </a>
+        </div>
+      </div>
+    </li>
+  {%- endfor -%}
+</ul>

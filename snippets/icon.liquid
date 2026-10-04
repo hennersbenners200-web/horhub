@@ -1,0 +1,74 @@
+{%- comment -%}
+  Renders an inline SVG icon.
+  Usage: {% render 'icon', name: 'truck' %}
+  Optional: class (extra class names)
+{%- endcomment -%}
+{%- capture icon_class -%}icon icon-{{ name }}{% if class %} {{ class }}{% endif %}{%- endcapture -%}
+{%- case name -%}
+  {%- when 'star' -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2.8l2.83 5.73 6.33.92-4.58 4.46 1.08 6.3L12 17.24l-5.66 2.97 1.08-6.3L2.84 9.45l6.33-.92L12 2.8z"/></svg>
+  {%- when 'star-half' -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><defs><linearGradient id="hh-half"><stop offset="50%" stop-color="currentColor"/><stop offset="50%" stop-color="currentColor" stop-opacity=".25"/></linearGradient></defs><path fill="url(#hh-half)" d="M12 2.8l2.83 5.73 6.33.92-4.58 4.46 1.08 6.3L12 17.24l-5.66 2.97 1.08-6.3L2.84 9.45l6.33-.92L12 2.8z"/></svg>
+  {%- when 'star-empty' -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 24 24" fill="currentColor" fill-opacity=".25" aria-hidden="true" focusable="false"><path d="M12 2.8l2.83 5.73 6.33.92-4.58 4.46 1.08 6.3L12 17.24l-5.66 2.97 1.08-6.3L2.84 9.45l6.33-.92L12 2.8z"/></svg>
+  {%- when 'play' -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 5.5v13a1 1 0 0 0 1.53.85l10.4-6.5a1 1 0 0 0 0-1.7L9.53 4.65A1 1 0 0 0 8 5.5z"/></svg>
+  {%- when 'pause' -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+  {%- when 'instagram' -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+  {%- when 'tiktok' -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M16.6 3c.3 2.2 1.6 3.7 3.9 3.9v3.1c-1.4.1-2.7-.3-3.9-1.1v6.2c0 3.5-2.6 5.9-5.8 5.9-3.4 0-5.8-2.7-5.6-6 .2-3 2.8-5.5 6.3-5.2v3.2c-1.6-.3-3 .6-3.1 2.1-.1 1.4 1 2.6 2.4 2.6 1.5 0 2.5-1 2.5-2.7V3h3.3z"/></svg>
+  {%- when 'youtube' -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12c0 1.3.1 2.6.4 3.8a3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1c.3-1.2.4-2.5.4-3.8 0-1.3-.1-2.6-.4-3.8zM10 15V9l5.2 3L10 15z"/></svg>
+  {%- when 'facebook' -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M13.5 21v-7.5H16l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21h3z"/></svg>
+  {%- when 'x-logo' -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.8 3h3.1l-6.8 7.8 8 10.2h-6.3l-4.9-6.4L5.3 21H2.2l7.3-8.3L1.8 3h6.4l4.4 5.9L17.8 3zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5z"/></svg>
+  {%- else -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      {%- case name -%}
+        {%- when 'menu' -%}<path d="M4 7h16M4 12h16M4 17h10"/>
+        {%- when 'close' -%}<path d="M6 6l12 12M18 6L6 18"/>
+        {%- when 'cart' -%}<path d="M5 7h14l-1.2 11.1a2 2 0 0 1-2 1.9H8.2a2 2 0 0 1-2-1.9L5 7z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/>
+        {%- when 'search' -%}<circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/>
+        {%- when 'user' -%}<circle cx="12" cy="8" r="4"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/>
+        {%- when 'arrow-right' -%}<path d="M5 12h14M13 6l6 6-6 6"/>
+        {%- when 'chevron-right' -%}<path d="M9 6l6 6-6 6"/>
+        {%- when 'chevron-left' -%}<path d="M15 6l-6 6 6 6"/>
+        {%- when 'plus' -%}<path d="M12 5v14M5 12h14"/>
+        {%- when 'minus' -%}<path d="M5 12h14"/>
+        {%- when 'check' -%}<path d="M5 12.5l4.5 4.5L19 7.5"/>
+        {%- when 'check-circle' -%}<circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.8 2.8L16.5 9.5"/>
+        {%- when 'x' -%}<path d="M7 7l10 10M17 7L7 17"/>
+        {%- when 'x-circle' -%}<circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/>
+        {%- when 'truck' -%}<path d="M3 6h11v10H3zM14 9h4l3 3.5V16h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17.5" cy="17.5" r="1.8"/>
+        {%- when 'shield' -%}<path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.3-7.5 9.5-4.3-1.2-7.5-4.9-7.5-9.5V6L12 3z"/><path d="M9 12l2 2 4-4"/>
+        {%- when 'return' -%}<path d="M9 14L4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/>
+        {%- when 'support' -%}<path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19c0 1.1-1.8 2-4 2h-2"/>
+        {%- when 'wireless' -%}<path d="M5 9.5a10 10 0 0 1 14 0M7.8 12.6a6 6 0 0 1 8.4 0M10.6 15.6a2 2 0 0 1 2.8 0"/><circle cx="12" cy="18.5" r=".6" fill="currentColor"/>
+        {%- when 'bluetooth' -%}<path d="M7 7l10 10-5 4V3l5 4L7 17"/>
+        {%- when 'sliders' -%}<path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/>
+        {%- when 'sound' -%}<path d="M4 9.5v5h3.5L12 19V5L7.5 9.5H4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/>
+        {%- when 'music' -%}<path d="M9 18V5l11-2v13"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/>
+        {%- when 'wave' -%}<path d="M3 12h2M7 8v8M11 5v14M15 9v6M19 7v10M21 12h0"/>
+        {%- when 'wrench' -%}<path d="M14.7 6.3a4 4 0 0 0-5.4 5l-5.6 5.6a1.5 1.5 0 0 0 2.1 2.1l5.6-5.6a4 4 0 0 0 5-5.4l-2.4 2.4-2.1-.6-.6-2.1 2.4-2.4z"/>
+        {%- when 'car' -%}<path d="M5 16V12l1.8-4.6A2 2 0 0 1 8.7 6h6.6a2 2 0 0 1 1.9 1.4L19 12v4"/><path d="M3.5 12h17v4.5a1 1 0 0 1-1 1h-15a1 1 0 0 1-1-1V12z"/><circle cx="7.5" cy="14.5" r=".8" fill="currentColor"/><circle cx="16.5" cy="14.5" r=".8" fill="currentColor"/><path d="M6 17.5V19M18 17.5V19"/>
+        {%- when 'bolt' -%}<path d="M13 3L5 13.5h6L10 21l8-10.5h-6L13 3z"/>
+        {%- when 'droplet' -%}<path d="M12 3.5s6 6.4 6 10.5a6 6 0 0 1-12 0c0-4.1 6-10.5 6-10.5z"/>
+        {%- when 'phone' -%}<rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/>
+        {%- when 'clock' -%}<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>
+        {%- when 'lock' -%}<rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/>
+        {%- when 'info' -%}<circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.8v.2"/>
+        {%- when 'box' -%}<path d="M3.5 7.5L12 3l8.5 4.5v9L12 21l-8.5-4.5v-9z"/><path d="M3.5 7.5L12 12l8.5-4.5M12 12v9"/>
+        {%- when 'mail' -%}<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5L12 13l8.5-6.5"/>
+        {%- when 'globe' -%}<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.7 5.6 3.7 9s-1.2 6.4-3.7 9c-2.5-2.6-3.7-5.6-3.7-9S9.5 5.6 12 3z"/>
+        {%- when 'button' -%}<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/>
+        {%- when 'gauge' -%}<path d="M4.5 17a8.5 8.5 0 1 1 15 0"/><path d="M12 13l3.5-4"/><circle cx="12" cy="13" r="1.2"/>
+        {%- when 'layers' -%}<path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/>
+        {%- when 'image' -%}<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="9.5" r="1.8"/><path d="M21 16l-5-5-9 9"/>
+        {%- when 'scale' -%}<path d="M12 3v18M7 21h10M5 7h14"/><path d="M5 7l-2.5 6a3 3 0 0 0 5 0L5 7zM19 7l-2.5 6a3 3 0 0 0 5 0L19 7z"/>
+        {%- else -%}<circle cx="12" cy="12" r="9"/>
+      {%- endcase -%}
+    </svg>
+{%- endcase -%}

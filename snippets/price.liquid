@@ -1,0 +1,38 @@
+{%- comment -%}
+  Product price with optional compare-at price and saving.
+  Accepts:
+  - product: product object
+  - variant: variant object (optional, defaults to selected or first available)
+  - size: 'lg' for the product page
+{%- endcomment -%}
+{%- liquid
+  assign target = variant | default: product.selected_or_first_available_variant
+  assign on_sale = false
+  if target.compare_at_price > target.price
+    assign on_sale = true
+    assign saving = target.compare_at_price | minus: target.price | money
+  endif
+-%}
+<div class="price{% if size == 'lg' %} price--lg{% endif %}" data-price>
+  {%- if product.price_varies and variant == blank -%}
+    {%- assign price_min = product.price_min | money -%}
+    <span class="price__current">{{ 'products.from_price' | t: price: price_min }}</span>
+  {%- else -%}
+    <span class="price__current">
+      <span class="visually-hidden">{% if on_sale %}{{ 'products.sale_price' | t }}{% else %}{{ 'products.regular_price' | t }}{% endif %}</span>
+      {{ target.price | money }}
+    </span>
+    {%- if on_sale -%}
+      <s class="price__compare">
+        <span class="visually-hidden">{{ 'products.regular_price' | t }}</span>
+        {{ target.compare_at_price | money }}
+      </s>
+      <span class="badge price__save">{{ 'products.save_amount' | t: amount: saving }}</span>
+    {%- endif -%}
+  {%- endif -%}
+</div>
+{%- if target.unit_price_measurement -%}
+  <p class="xsmall muted">
+    {{ target.unit_price | money }}/{%- if target.unit_price_measurement.reference_value != 1 -%}{{ target.unit_price_measurement.reference_value }}{%- endif -%}{{ target.unit_price_measurement.reference_unit }}
+  </p>
+{%- endif -%}

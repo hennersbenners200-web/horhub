@@ -1,0 +1,94 @@
+<section class="section scheme-{{ section.settings.scheme }}" aria-labelledby="Heading-{{ section.id }}">
+  <div class="container container--narrow">
+    <div class="section-head section-head--center">
+      {%- if section.settings.eyebrow != blank -%}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+      <h2 class="h2" id="Heading-{{ section.id }}">{{ section.settings.heading }}</h2>
+      {%- if section.settings.text != blank -%}<p class="lead">{{ section.settings.text }}</p>{%- endif -%}
+    </div>
+
+    <div class="compare" role="table" aria-labelledby="Heading-{{ section.id }}">
+      <div class="compare__row" role="row">
+        <span role="columnheader"><span class="visually-hidden">{{ 'sections.feature' | t }}</span></span>
+        <span class="compare__head" role="columnheader">{{ section.settings.them_label }}</span>
+        <span class="compare__head compare__head--us" role="columnheader">{{ section.settings.us_label }}</span>
+      </div>
+      {%- for block in section.blocks -%}
+        <div class="compare__row" role="row" {{ block.shopify_attributes }}>
+          <span class="compare__feature" role="rowheader">{{ block.settings.feature }}</span>
+          <span class="compare__cell" role="cell">
+            {%- if block.settings.them -%}
+              <span class="compare__yes">{% render 'icon', name: 'check' %}</span><span class="visually-hidden">{{ 'sections.yes' | t }}</span>
+            {%- else -%}
+              <span class="compare__no">{% render 'icon', name: 'x' %}</span><span class="visually-hidden">{{ 'sections.no' | t }}</span>
+            {%- endif -%}
+          </span>
+          <span class="compare__cell compare__cell--us" role="cell">
+            {%- if block.settings.us -%}
+              <span class="compare__yes">{% render 'icon', name: 'check' %}</span><span class="visually-hidden">{{ 'sections.yes' | t }}</span>
+            {%- else -%}
+              <span class="compare__no">{% render 'icon', name: 'x' %}</span><span class="visually-hidden">{{ 'sections.no' | t }}</span>
+            {%- endif -%}
+          </span>
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.button_label != blank -%}
+      <div class="steps__footer">
+        <a class="btn btn--primary btn--lg" href="{{ section.settings.button_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label }}</a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Comparison",
+  "tag": "div",
+  "max_blocks": 10,
+  "settings": [
+    {
+      "type": "select",
+      "id": "scheme",
+      "label": "Colour scheme",
+      "options": [
+        { "value": "dark", "label": "Dark" },
+        { "value": "surface", "label": "Dark grey" },
+        { "value": "light", "label": "Light" }
+      ],
+      "default": "dark"
+    },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "The difference" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Standard horn vs HornHub" },
+    { "type": "textarea", "id": "text", "label": "Text" },
+    { "type": "text", "id": "them_label", "label": "Left column label", "default": "Standard horn" },
+    { "type": "text", "id": "us_label", "label": "Right column label", "default": "HornHub" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Upgrade your horn" },
+    { "type": "url", "id": "button_link", "label": "Button link" }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Row",
+      "settings": [
+        { "type": "text", "id": "feature", "label": "Feature", "default": "Custom sounds" },
+        { "type": "checkbox", "id": "them", "label": "Standard horn has this", "default": false },
+        { "type": "checkbox", "id": "us", "label": "HornHub has this", "default": true }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Comparison",
+      "blocks": [
+        { "type": "row", "settings": { "feature": "Choose your own sounds", "them": false, "us": true } },
+        { "type": "row", "settings": { "feature": "Change sounds from your phone", "them": false, "us": true } },
+        { "type": "row", "settings": { "feature": "Wireless button you can place anywhere", "them": false, "us": true } },
+        { "type": "row", "settings": { "feature": "Load your own audio clips", "them": false, "us": true } },
+        { "type": "row", "settings": { "feature": "Keeps your factory horn working", "them": true, "us": true } },
+        { "type": "row", "settings": { "feature": "DIY install with included harness", "them": false, "us": true } }
+      ]
+    }
+  ]
+}
+{% endschema %}

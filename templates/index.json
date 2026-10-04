@@ -1,0 +1,559 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {}
+    },
+    "trust-strip": {
+      "type": "trust-strip",
+      "settings": {},
+      "blocks": {
+        "trust-strip-item-1": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "title": "Free tracked shipping",
+            "text": "Dispatched within 1 working day"
+          }
+        },
+        "trust-strip-item-2": {
+          "type": "item",
+          "settings": {
+            "icon": "return",
+            "title": "30-day returns",
+            "text": "Not for you? Send it back"
+          }
+        },
+        "trust-strip-item-3": {
+          "type": "item",
+          "settings": {
+            "icon": "shield",
+            "title": "12-month warranty",
+            "text": "Covered against defects"
+          }
+        },
+        "trust-strip-item-4": {
+          "type": "item",
+          "settings": {
+            "icon": "support",
+            "title": "Real human support",
+            "text": "Install help from our team"
+          }
+        }
+      },
+      "block_order": [
+        "trust-strip-item-1",
+        "trust-strip-item-2",
+        "trust-strip-item-3",
+        "trust-strip-item-4"
+      ]
+    },
+    "problem-solution": {
+      "type": "problem-solution",
+      "settings": {}
+    },
+    "product-showcase": {
+      "type": "product-showcase",
+      "settings": {},
+      "blocks": {
+        "product-showcase-feature-1": {
+          "type": "feature",
+          "settings": {
+            "icon": "wireless",
+            "title": "Wireless button",
+            "text": "Stick it to the dash, wheel or console. No wires through the cabin."
+          }
+        },
+        "product-showcase-feature-2": {
+          "type": "feature",
+          "settings": {
+            "icon": "sliders",
+            "title": "Fully programmable",
+            "text": "Assign, reorder and swap sounds from your phone whenever you like."
+          }
+        },
+        "product-showcase-feature-3": {
+          "type": "feature",
+          "settings": {
+            "icon": "music",
+            "title": "Your sound library",
+            "text": "Start with the built-in pack or load your own clips."
+          }
+        },
+        "product-showcase-feature-4": {
+          "type": "feature",
+          "settings": {
+            "icon": "wrench",
+            "title": "DIY install",
+            "text": "Connects to 12V power with the included harness. Most installs take under an hour."
+          }
+        },
+        "product-showcase-feature-5": {
+          "type": "feature",
+          "settings": {
+            "icon": "car",
+            "title": "Broad compatibility",
+            "text": "Built for 12V cars, vans and pickups. Check your fit in the FAQ."
+          }
+        }
+      },
+      "block_order": [
+        "product-showcase-feature-1",
+        "product-showcase-feature-2",
+        "product-showcase-feature-3",
+        "product-showcase-feature-4",
+        "product-showcase-feature-5"
+      ]
+    },
+    "how-it-works": {
+      "type": "how-it-works",
+      "settings": {},
+      "blocks": {
+        "how-it-works-step-1": {
+          "type": "step",
+          "settings": {
+            "placeholder_file": "step-1-connect.jpg",
+            "title": "Connect",
+            "text": "Download the app and pair your horn unit and wireless button.",
+            "time": "2 min"
+          }
+        },
+        "how-it-works-step-2": {
+          "type": "step",
+          "settings": {
+            "placeholder_file": "step-2-choose-sound.jpg",
+            "title": "Choose your sound",
+            "text": "Pick from the built-in library or load your own clips, then assign them to the button.",
+            "time": "5 min"
+          }
+        },
+        "how-it-works-step-3": {
+          "type": "step",
+          "settings": {
+            "placeholder_file": "step-3-install.jpg",
+            "title": "Install",
+            "text": "Mount the unit under the bonnet and connect it to 12V power with the included harness.",
+            "time": "30–60 min"
+          }
+        },
+        "how-it-works-step-4": {
+          "type": "step",
+          "settings": {
+            "placeholder_file": "step-4-use-it.jpg",
+            "title": "Use it",
+            "text": "Place the wireless button within reach. Tap once, and your sound plays.",
+            "time": "Instant"
+          }
+        }
+      },
+      "block_order": [
+        "how-it-works-step-1",
+        "how-it-works-step-2",
+        "how-it-works-step-3",
+        "how-it-works-step-4"
+      ]
+    },
+    "sound-lab": {
+      "type": "sound-lab",
+      "settings": {},
+      "blocks": {
+        "sound-lab-category-1": {
+          "type": "category",
+          "settings": {
+            "title": "Classics",
+            "icon": "car",
+            "sound_1_name": "Dual-tone European",
+            "sound_1_meta": "Deep, clean, unmistakably premium",
+            "sound_2_name": "Truck air horn",
+            "sound_2_meta": "Big-rig energy for small cars",
+            "sound_3_name": "Vintage bulb",
+            "sound_3_meta": "Old-school charm",
+            "sound_4_name": "Chirp",
+            "sound_4_meta": "A short, friendly hello"
+          }
+        },
+        "sound-lab-category-2": {
+          "type": "category",
+          "settings": {
+            "title": "Funny",
+            "icon": "star",
+            "sound_1_name": "Goat",
+            "sound_1_meta": "Guaranteed double-take",
+            "sound_2_name": "Duck squad",
+            "sound_2_meta": "For the school run",
+            "sound_3_name": "Cartoon boing",
+            "sound_3_meta": "Pure comedy",
+            "sound_4_name": "Sad trombone",
+            "sound_4_meta": "When someone misses the green light"
+          }
+        },
+        "sound-lab-category-3": {
+          "type": "category",
+          "settings": {
+            "title": "Melodies",
+            "icon": "music",
+            "sound_1_name": "Victory fanfare",
+            "sound_1_meta": "Arrive like you won",
+            "sound_2_name": "Doorbell",
+            "sound_2_meta": "Ding-dong, I'm outside",
+            "sound_3_name": "Arcade level-up",
+            "sound_3_meta": "8-bit nostalgia",
+            "sound_4_name": "Game show win",
+            "sound_4_meta": "For parking-spot victories"
+          }
+        },
+        "sound-lab-category-4": {
+          "type": "category",
+          "settings": {
+            "title": "Your own",
+            "icon": "phone",
+            "sound_1_name": "Record a clip",
+            "sound_1_meta": "Your voice, your catchphrase",
+            "sound_2_name": "Upload an audio file",
+            "sound_2_meta": "Any short clip from your phone",
+            "sound_3_name": "Trim and preview",
+            "sound_3_meta": "Get the timing just right"
+          }
+        }
+      },
+      "block_order": [
+        "sound-lab-category-1",
+        "sound-lab-category-2",
+        "sound-lab-category-3",
+        "sound-lab-category-4"
+      ]
+    },
+    "lifestyle": {
+      "type": "lifestyle",
+      "settings": {},
+      "blocks": {
+        "lifestyle-tile-1": {
+          "type": "tile",
+          "settings": {
+            "alt": "Lowered hatchback at a night car meet under orange street lights, driver reaching for the HornHub button.",
+            "placeholder_file": "lifestyle-night-meet.jpg (1600 × 2000px)",
+            "title": "The meet",
+            "caption": "Turn heads before you've even parked"
+          }
+        },
+        "lifestyle-tile-2": {
+          "type": "tile",
+          "settings": {
+            "alt": "HornHub wireless button mounted on a steering wheel spoke, close-up.",
+            "placeholder_file": "lifestyle-button-wheel.jpg (1200 × 1500px)",
+            "title": "Within reach",
+            "caption": "Button mounts where you want it"
+          }
+        },
+        "lifestyle-tile-3": {
+          "type": "tile",
+          "settings": {
+            "alt": "Open bonnet showing the HornHub unit installed neatly beside the engine bay.",
+            "placeholder_file": "lifestyle-engine-bay.jpg (1200 × 1500px)",
+            "title": "Clean install",
+            "caption": "Tucked away under the bonnet"
+          }
+        },
+        "lifestyle-tile-4": {
+          "type": "tile",
+          "settings": {
+            "alt": "Two friends laughing in a parked car while one holds a phone showing the HornHub app.",
+            "placeholder_file": "lifestyle-friends-app.jpg (1200 × 1500px)",
+            "title": "Share the joke",
+            "caption": "Swap sounds with a tap"
+          }
+        },
+        "lifestyle-tile-5": {
+          "type": "tile",
+          "settings": {
+            "alt": "Sports car on an empty coastal road at golden hour, rear three-quarter view.",
+            "placeholder_file": "lifestyle-coastal-drive.jpg (1200 × 1500px)",
+            "title": "Daily driver",
+            "caption": "Fun every single journey"
+          }
+        }
+      },
+      "block_order": [
+        "lifestyle-tile-1",
+        "lifestyle-tile-2",
+        "lifestyle-tile-3",
+        "lifestyle-tile-4",
+        "lifestyle-tile-5"
+      ]
+    },
+    "features-grid": {
+      "type": "features-grid",
+      "settings": {},
+      "blocks": {
+        "features-grid-feature-1": {
+          "type": "feature",
+          "settings": {
+            "icon": "wireless",
+            "title": "Truly wireless control",
+            "text": "The button talks to the horn unit wirelessly, so there's nothing to run through your dash."
+          }
+        },
+        "features-grid-feature-2": {
+          "type": "feature",
+          "settings": {
+            "icon": "phone",
+            "title": "App-based sound control",
+            "text": "Browse, preview and assign sounds from your phone. Change them as often as you like."
+          }
+        },
+        "features-grid-feature-3": {
+          "type": "feature",
+          "settings": {
+            "icon": "droplet",
+            "title": "Weather-sealed housing",
+            "text": "Designed to live in the engine bay through rain, road spray and heat."
+          }
+        },
+        "features-grid-feature-4": {
+          "type": "feature",
+          "settings": {
+            "icon": "bolt",
+            "title": "12V plug-in harness",
+            "text": "Connects to your car's 12V supply using the included wiring and fuse."
+          }
+        },
+        "features-grid-feature-5": {
+          "type": "feature",
+          "settings": {
+            "icon": "shield",
+            "title": "Factory horn stays",
+            "text": "HornHub adds a second voice. Your original horn keeps working exactly as before."
+          }
+        },
+        "features-grid-feature-6": {
+          "type": "feature",
+          "settings": {
+            "icon": "support",
+            "title": "Install support",
+            "text": "Clear guides and a real support team if you get stuck."
+          }
+        }
+      },
+      "block_order": [
+        "features-grid-feature-1",
+        "features-grid-feature-2",
+        "features-grid-feature-3",
+        "features-grid-feature-4",
+        "features-grid-feature-5",
+        "features-grid-feature-6"
+      ]
+    },
+    "comparison": {
+      "type": "comparison",
+      "settings": {},
+      "blocks": {
+        "comparison-row-1": {
+          "type": "row",
+          "settings": {
+            "feature": "Choose your own sounds",
+            "them": false,
+            "us": true
+          }
+        },
+        "comparison-row-2": {
+          "type": "row",
+          "settings": {
+            "feature": "Change sounds from your phone",
+            "them": false,
+            "us": true
+          }
+        },
+        "comparison-row-3": {
+          "type": "row",
+          "settings": {
+            "feature": "Wireless button you can place anywhere",
+            "them": false,
+            "us": true
+          }
+        },
+        "comparison-row-4": {
+          "type": "row",
+          "settings": {
+            "feature": "Load your own audio clips",
+            "them": false,
+            "us": true
+          }
+        },
+        "comparison-row-5": {
+          "type": "row",
+          "settings": {
+            "feature": "Keeps your factory horn working",
+            "them": true,
+            "us": true
+          }
+        },
+        "comparison-row-6": {
+          "type": "row",
+          "settings": {
+            "feature": "DIY install with included harness",
+            "them": false,
+            "us": true
+          }
+        }
+      },
+      "block_order": [
+        "comparison-row-1",
+        "comparison-row-2",
+        "comparison-row-3",
+        "comparison-row-4",
+        "comparison-row-5",
+        "comparison-row-6"
+      ]
+    },
+    "reviews": {
+      "type": "reviews",
+      "settings": {},
+      "blocks": {
+        "reviews-review-1": {
+          "type": "review",
+          "settings": {
+            "placeholder": true,
+            "rating": 5,
+            "title": "Placeholder: install experience",
+            "body": "<p>Replace this with a real customer review about how easy installation was. Keep the reviewer's own words.</p>",
+            "author": "Sample customer",
+            "detail": "Car model · Location"
+          }
+        },
+        "reviews-review-2": {
+          "type": "review",
+          "settings": {
+            "placeholder": true,
+            "rating": 5,
+            "title": "Placeholder: favourite sound",
+            "body": "<p>Replace this with a real review describing the sounds a customer loves and the reactions they get.</p>",
+            "author": "Sample customer",
+            "detail": "Car model · Location"
+          }
+        },
+        "reviews-review-3": {
+          "type": "review",
+          "settings": {
+            "placeholder": true,
+            "rating": 5,
+            "title": "Placeholder: build quality",
+            "body": "<p>Replace this with a real review about build quality, the wireless button or the app.</p>",
+            "author": "Sample customer",
+            "detail": "Car model · Location"
+          }
+        }
+      },
+      "block_order": [
+        "reviews-review-1",
+        "reviews-review-2",
+        "reviews-review-3"
+      ]
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {},
+      "blocks": {
+        "faq-question-1": {
+          "type": "question",
+          "settings": {
+            "question": "Will HornHub work with my car?",
+            "answer": "<p>HornHub is designed for vehicles with a standard 12V electrical system, which covers most cars, vans and pickups. If you're unsure, contact us with your make, model and year before ordering and we'll confirm.</p>"
+          }
+        },
+        "faq-question-2": {
+          "type": "question",
+          "settings": {
+            "question": "How hard is it to install?",
+            "answer": "<p>If you can locate your battery and use a screwdriver, you can install HornHub. The kit includes a wiring harness, inline fuse and a step-by-step guide. Most installs take 30–60 minutes. If you'd rather not do it yourself, any auto electrician can fit it quickly.</p>"
+          }
+        },
+        "faq-question-3": {
+          "type": "question",
+          "settings": {
+            "question": "How does the wireless button connect?",
+            "answer": "<p>The button pairs wirelessly with the horn unit, so there are no cables to run into the cabin. Pairing takes a minute during setup and the button reconnects automatically after that.</p>"
+          }
+        },
+        "faq-question-4": {
+          "type": "question",
+          "settings": {
+            "question": "What powers it?",
+            "answer": "<p>The horn unit runs from your car's 12V supply using the included harness and fuse. The wireless button uses a replaceable coin-cell battery.</p>"
+          }
+        },
+        "faq-question-5": {
+          "type": "question",
+          "settings": {
+            "question": "Can I use my own sounds?",
+            "answer": "<p>Yes. Choose from the built-in library or load your own short audio clips through the app, then assign them to the button. You can change sounds as often as you like.</p>"
+          }
+        },
+        "faq-question-6": {
+          "type": "question",
+          "settings": {
+            "question": "Is it waterproof?",
+            "answer": "<p>The horn unit has a weather-sealed housing designed for the engine bay, where it's exposed to rain and road spray. It isn't designed to be submerged, and we recommend mounting it away from direct water jets when pressure washing.</p>"
+          }
+        },
+        "faq-question-7": {
+          "type": "question",
+          "settings": {
+            "question": "Does it replace my factory horn?",
+            "answer": "<p>No. HornHub is installed alongside your original horn, which keeps working as normal. That means you always have your standard horn available.</p>"
+          }
+        },
+        "faq-question-8": {
+          "type": "question",
+          "settings": {
+            "question": "Is it legal to use?",
+            "answer": "<p>Rules on vehicle horns and sound devices vary by country, state and region. In many places, horns may only be used to warn other road users, and some sounds or volumes are restricted on public roads. Please check your local regulations before installing or using HornHub. You are responsible for using it lawfully and considerately.</p>"
+          }
+        },
+        "faq-question-9": {
+          "type": "question",
+          "settings": {
+            "question": "How long does shipping take?",
+            "answer": "<p>Orders are dispatched within 1 working day with tracking. Delivery times and costs for your location are shown at checkout.</p>"
+          }
+        },
+        "faq-question-10": {
+          "type": "question",
+          "settings": {
+            "question": "What if I don't like it?",
+            "answer": "<p>You have 30 days from delivery to return it. Contact us and we'll guide you through the return. See our refund policy for the full details.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq-question-1",
+        "faq-question-2",
+        "faq-question-3",
+        "faq-question-4",
+        "faq-question-5",
+        "faq-question-6",
+        "faq-question-7",
+        "faq-question-8",
+        "faq-question-9",
+        "faq-question-10"
+      ]
+    },
+    "final-cta": {
+      "type": "final-cta",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "trust-strip",
+    "problem-solution",
+    "product-showcase",
+    "how-it-works",
+    "sound-lab",
+    "lifestyle",
+    "features-grid",
+    "comparison",
+    "reviews",
+    "faq",
+    "final-cta"
+  ]
+}

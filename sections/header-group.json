@@ -1,0 +1,30 @@
+{
+  "type": "header",
+  "name": "Header group",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement-shipping": {
+          "type": "announcement",
+          "settings": { "text": "Free tracked shipping on every order", "icon": "truck", "link": "" }
+        },
+        "announcement-returns": {
+          "type": "announcement",
+          "settings": { "text": "30-day hassle-free returns", "icon": "return", "link": "" }
+        }
+      },
+      "block_order": ["announcement-shipping", "announcement-returns"],
+      "settings": { "style": "accent" }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "menu": "main-menu",
+        "cta_label": "Shop now",
+        "cta_link": "/collections/all"
+      }
+    }
+  },
+  "order": ["announcement-bar", "header"]
+}

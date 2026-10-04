@@ -1,0 +1,35 @@
+{%- comment -%}
+  Responsive image with a branded, labelled placeholder fallback.
+
+  Accepts:
+  - image: image object (optional — placeholder shown when blank)
+  - alt: alt text override (falls back to image.alt)
+  - sizes: sizes attribute (default: 100vw)
+  - widths: comma-separated widths (default: 375,550,750,1100,1500,1800,2200)
+  - eager: true for above-the-fold images (disables lazy loading, sets high fetch priority)
+  - file: suggested filename shown on the placeholder, e.g. 'hero-horn-front.jpg'
+  - description: what the photo should show, displayed on the placeholder
+  - class: extra class on the img
+
+  Usage: {% render 'media', image: section.settings.image, sizes: '50vw', file: 'hero.jpg', description: 'Horn unit on dark backdrop' %}
+{%- endcomment -%}
+{%- liquid
+  assign img_sizes = sizes | default: '100vw'
+  assign img_widths = widths | default: '375, 550, 750, 1100, 1500, 1800, 2200'
+  assign img_alt = alt | default: image.alt | default: description | escape
+-%}
+{%- if image != blank -%}
+  {%- if eager -%}
+    {{ image | image_url: width: 2200 | image_tag: sizes: img_sizes, widths: img_widths, alt: img_alt, class: class, loading: 'eager', fetchpriority: 'high' }}
+  {%- else -%}
+    {{ image | image_url: width: 2200 | image_tag: sizes: img_sizes, widths: img_widths, alt: img_alt, class: class, loading: 'lazy' }}
+  {%- endif -%}
+{%- else -%}
+  <div class="placeholder" role="img" aria-label="{{ description | default: 'Image placeholder' | escape }}">
+    <div class="placeholder__inner">
+      {% render 'icon', name: 'image', class: 'placeholder__icon' %}
+      {%- if file != blank -%}<span class="placeholder__file">{{ file }}</span>{%- endif -%}
+      {%- if description != blank -%}<span class="placeholder__desc">{{ description }}</span>{%- endif -%}
+    </div>
+  </div>
+{%- endif -%}

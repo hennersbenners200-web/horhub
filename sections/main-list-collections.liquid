@@ -1,0 +1,26 @@
+<section class="scheme-dark page-section">
+  <div class="container">
+    <header class="page-header">
+      <h1 class="h1">{{ 'collections.all_collections' | t }}</h1>
+    </header>
+    <ul class="product-grid" role="list">
+      {%- for collection in collections -%}
+        <li>
+          <article class="card">
+            <div class="card__media">
+              {% render 'media', image: collection.featured_image, sizes: '(min-width: 990px) 33vw, 50vw', description: collection.title %}
+            </div>
+            <h2 class="card__title"><a href="{{ collection.url }}">{{ collection.title }}</a></h2>
+          </article>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collections list",
+  "tag": "div"
+}
+{% endschema %}

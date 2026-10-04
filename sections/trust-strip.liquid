@@ -1,0 +1,82 @@
+<section class="section--trust scheme-{{ section.settings.scheme }}" aria-label="{{ section.settings.label | escape }}">
+  <div class="container">
+    <ul class="trust trust__grid" role="list" style="--cols: {{ section.blocks.size }}">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'rating' -%}
+            {%- assign rating = block.settings.product.metafields.reviews.rating.value -%}
+            {%- if rating != blank -%}
+              <li class="trust__item" {{ block.shopify_attributes }}>
+                <span class="trust__icon">{% render 'icon', name: 'star' %}</span>
+                <span>
+                  <span class="trust__title">{{ rating.rating | round: 1 }}/5 {{ block.settings.title }}</span>
+                  <span class="trust__text">{{ 'products.review_count' | t: count: block.settings.product.metafields.reviews.rating_count.value }}</span>
+                </span>
+              </li>
+            {%- endif -%}
+          {%- else -%}
+            <li class="trust__item" {{ block.shopify_attributes }}>
+              <span class="trust__icon">{% render 'icon', name: block.settings.icon %}</span>
+              <span>
+                <span class="trust__title">{{ block.settings.title }}</span>
+                {%- if block.settings.text != blank -%}<span class="trust__text">{{ block.settings.text }}</span>{%- endif -%}
+              </span>
+            </li>
+        {%- endcase -%}
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Trust strip",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "select",
+      "id": "scheme",
+      "label": "Colour scheme",
+      "options": [
+        { "value": "dark", "label": "Dark" },
+        { "value": "surface", "label": "Dark grey" },
+        { "value": "light", "label": "Light" }
+      ],
+      "default": "dark"
+    },
+    { "type": "text", "id": "label", "label": "Accessible label", "default": "Why buy from HornHub" }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Trust item",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "Icon", "options": [{"value": "truck", "label": "Truck"}, {"value": "return", "label": "Returns"}, {"value": "shield", "label": "Shield"}, {"value": "support", "label": "Support"}, {"value": "wireless", "label": "Wireless"}, {"value": "bluetooth", "label": "Bluetooth"}, {"value": "sliders", "label": "Sliders"}, {"value": "sound", "label": "Speaker"}, {"value": "music", "label": "Music"}, {"value": "wave", "label": "Waveform"}, {"value": "wrench", "label": "Wrench"}, {"value": "car", "label": "Car"}, {"value": "bolt", "label": "Power"}, {"value": "droplet", "label": "Weather"}, {"value": "phone", "label": "Phone"}, {"value": "clock", "label": "Clock"}, {"value": "lock", "label": "Lock"}, {"value": "box", "label": "Box"}, {"value": "button", "label": "Button"}, {"value": "gauge", "label": "Gauge"}, {"value": "layers", "label": "Layers"}, {"value": "star", "label": "Star"}, {"value": "globe", "label": "Globe"}, {"value": "scale", "label": "Legal"}, {"value": "mail", "label": "Email"}, {"value": "info", "label": "Info"}, {"value": "check-circle", "label": "Check"}], "default": "truck" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Free tracked shipping" },
+        { "type": "text", "id": "text", "label": "Text", "default": "Dispatched within 1 working day" }
+      ]
+    },
+    {
+      "type": "rating",
+      "name": "Product rating",
+      "limit": 1,
+      "settings": [
+        { "type": "product", "id": "product", "label": "Product" },
+        { "type": "text", "id": "title", "label": "Label", "default": "average rating" },
+        { "type": "paragraph", "content": "Shows the real rating published to the product by your reviews app. Hidden until ratings exist." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trust strip",
+      "blocks": [
+        { "type": "item", "settings": { "icon": "truck", "title": "Free tracked shipping", "text": "Dispatched within 1 working day" } },
+        { "type": "item", "settings": { "icon": "return", "title": "30-day returns", "text": "Not for you? Send it back" } },
+        { "type": "item", "settings": { "icon": "shield", "title": "12-month warranty", "text": "Covered against defects" } },
+        { "type": "item", "settings": { "icon": "support", "title": "Real human support", "text": "Install help from our team" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

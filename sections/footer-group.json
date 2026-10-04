@@ -1,0 +1,22 @@
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "footer-menu": {
+          "type": "menu",
+          "settings": { "heading": "Explore", "menu": "footer" }
+        },
+        "footer-support": {
+          "type": "support",
+          "settings": { "heading": "Support", "email": "", "hours": "Mon–Fri, 9am–5pm" }
+        }
+      },
+      "block_order": ["footer-menu", "footer-support"],
+      "settings": { "show_newsletter": true }
+    }
+  },
+  "order": ["footer"]
+}
