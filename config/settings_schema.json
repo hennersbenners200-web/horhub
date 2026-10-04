@@ -1,0 +1,155 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "HornHub",
+    "theme_version": "1.0.0",
+    "theme_author": "HornHub",
+    "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
+    "theme_support_url": "https://help.shopify.com/manual/online-store/themes"
+  },
+  {
+    "name": "Brand",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo",
+        "info": "Optional. Leave empty to use the HornHub text wordmark."
+      },
+      {
+        "type": "range",
+        "id": "logo_width",
+        "label": "Logo width",
+        "min": 60,
+        "max": 240,
+        "step": 4,
+        "unit": "px",
+        "default": 132
+      },
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon",
+        "info": "Square PNG, at least 96 × 96px. Leave empty to use the built-in HornHub icon."
+      },
+      {
+        "type": "image_picker",
+        "id": "share_image",
+        "label": "Default social sharing image",
+        "info": "Used when a page has no image of its own. 1200 × 628px recommended."
+      }
+    ]
+  },
+  {
+    "name": "Colours",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_background",
+        "label": "Background",
+        "default": "#0B0B0C"
+      },
+      {
+        "type": "color",
+        "id": "color_surface",
+        "label": "Surface (cards, panels)",
+        "default": "#161618"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Text",
+        "default": "#F5F5F4"
+      },
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": "Accent (buttons, highlights)",
+        "default": "#FF5B1F"
+      },
+      {
+        "type": "color",
+        "id": "color_accent_text",
+        "label": "Text on accent",
+        "default": "#0B0B0C"
+      },
+      {
+        "type": "color",
+        "id": "color_light_background",
+        "label": "Light section background",
+        "default": "#F3F3F1"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "font_heading",
+        "label": "Headings",
+        "default": "geist_n8"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_body",
+        "label": "Body",
+        "default": "geist_n4"
+      }
+    ]
+  },
+  {
+    "name": "Cart",
+    "settings": [
+      {
+        "type": "select",
+        "id": "cart_type",
+        "label": "Cart type",
+        "options": [
+          { "value": "drawer", "label": "Drawer" },
+          { "value": "page", "label": "Page" }
+        ],
+        "default": "drawer"
+      },
+      {
+        "type": "text",
+        "id": "cart_trust_note",
+        "label": "Trust note under checkout button",
+        "default": "Secure checkout · 30-day returns"
+      },
+      {
+        "type": "product",
+        "id": "cart_empty_product",
+        "label": "Product to suggest when cart is empty"
+      }
+    ]
+  },
+  {
+    "name": "Social media",
+    "settings": [
+      { "type": "text", "id": "social_instagram", "label": "Instagram URL", "placeholder": "https://instagram.com/hornhub" },
+      { "type": "text", "id": "social_tiktok", "label": "TikTok URL", "placeholder": "https://tiktok.com/@hornhub" },
+      { "type": "text", "id": "social_youtube", "label": "YouTube URL", "placeholder": "https://youtube.com/@hornhub" },
+      { "type": "text", "id": "social_facebook", "label": "Facebook URL" },
+      { "type": "text", "id": "social_x", "label": "X (Twitter) URL" }
+    ]
+  },
+  {
+    "name": "Search engine & legal",
+    "settings": [
+      {
+        "type": "text",
+        "id": "seo_brand_description",
+        "label": "Brand description for search engines",
+        "default": "HornHub makes wireless programmable car horns. Load your own sounds, pair the wireless button and swap your stock horn tone in minutes."
+      },
+      {
+        "type": "richtext",
+        "id": "legal_notice",
+        "label": "Horn use notice",
+        "info": "Shown near the buy button and in the footer. Horn laws vary by country and region.",
+        "default": "<p>Horn and sound-device rules vary by country and region. Check your local regulations before installing or using HornHub on public roads.</p>"
+      }
+    ]
+  }
+]

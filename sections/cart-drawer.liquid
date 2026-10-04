@@ -1,0 +1,71 @@
+{%- comment -%}
+  Cart drawer. Rendered from layout/theme.liquid and re-fetched through the
+  Section Rendering API after every cart change (see global.js).
+{%- endcomment -%}
+<cart-drawer class="drawer" id="CartDrawer" data-cart-count="{{ cart.item_count }}">
+  <div class="drawer__overlay" data-drawer-close></div>
+  <div class="drawer__panel" role="dialog" aria-modal="true" aria-labelledby="CartDrawerTitle" tabindex="-1">
+    <div class="drawer__header">
+      <h2 class="drawer__title" id="CartDrawerTitle">
+        {{ 'cart.title' | t }}{% if cart.item_count > 0 %} <span class="muted">({{ cart.item_count }})</span>{% endif %}
+      </h2>
+      <button type="button" class="icon-btn" data-drawer-close aria-label="{{ 'accessibility.close' | t }}">
+        {% render 'icon', name: 'close' %}
+      </button>
+    </div>
+
+    <div class="drawer__content" data-cart-content>
+      {%- if cart.item_count > 0 -%}
+        <div class="drawer__body">
+          <cart-items>
+            {% render 'cart-line-items', context: 'drawer' %}
+          </cart-items>
+        </div>
+        <div class="drawer__footer">
+          <p class="cart-error" role="alert" data-cart-error hidden></p>
+          {%- for discount in cart.cart_level_discount_applications -%}
+            <div class="cart-summary__row cart-summary__discount">
+              <span>{{ discount.title }}</span>
+              <span class="accent">−{{ discount.total_allocated_amount | money }}</span>
+            </div>
+          {%- endfor -%}
+          <div class="cart-summary__row">
+            <span>{{ 'cart.subtotal' | t }}</span>
+            <span class="cart-summary__total">{{ cart.total_price | money_with_currency }}</span>
+          </div>
+          <p class="cart-summary__note">{{ 'cart.taxes_shipping_note' | t }}</p>
+          <form action="{{ routes.cart_url }}" method="post">
+            <button type="submit" name="checkout" class="btn btn--primary btn--lg btn--block">
+              {% render 'icon', name: 'lock' %}
+              <span>{{ 'cart.checkout' | t }}</span>
+            </button>
+          </form>
+          {%- if settings.cart_trust_note != blank -%}
+            <p class="cart-summary__trust">{% render 'icon', name: 'shield' %}{{ settings.cart_trust_note }}</p>
+          {%- endif -%}
+          {% render 'payment-icons' %}
+        </div>
+      {%- else -%}
+        <div class="drawer__body">
+          <div class="cart-empty">
+            {% render 'icon', name: 'cart', class: 'cart-empty__icon' %}
+            <p class="h3">{{ 'cart.empty' | t }}</p>
+            <p class="muted">{{ 'cart.empty_text' | t }}</p>
+            {%- if settings.cart_empty_product != blank -%}
+              <a class="btn btn--primary" href="{{ settings.cart_empty_product.url }}">{{ 'cart.shop_product' | t: title: settings.cart_empty_product.title }}</a>
+            {%- else -%}
+              <a class="btn btn--primary" href="{{ routes.all_products_collection_url }}">{{ 'cart.continue_shopping' | t }}</a>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</cart-drawer>
+
+{% schema %}
+{
+  "name": "Cart drawer",
+  "settings": []
+}
+{% endschema %}

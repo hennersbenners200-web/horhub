@@ -1,0 +1,22 @@
+<article class="scheme-dark page-section">
+  <div class="container container--narrow">
+    <header class="page-header">
+      <p class="eyebrow"><a href="{{ blog.url }}">{{ blog.title }}</a></p>
+      <h1 class="h1">{{ article.title }}</h1>
+      <p class="muted small"><time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'date' }}</time></p>
+    </header>
+    {%- if article.image -%}
+      <div class="media media--wide article__image">
+        {% render 'media', image: article.image, sizes: '(min-width: 880px) 880px, 100vw', eager: true %}
+      </div>
+    {%- endif -%}
+    <div class="rte">{{ article.content }}</div>
+  </div>
+</article>
+
+{% schema %}
+{
+  "name": "Blog post",
+  "tag": "div"
+}
+{% endschema %}

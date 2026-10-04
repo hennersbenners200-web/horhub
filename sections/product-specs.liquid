@@ -1,0 +1,122 @@
+{%- comment -%}
+  What's included, technical specs, compatibility and installation cards.
+  Every text field supports dynamic sources, so you can connect them to
+  product metafields if you sell more than one model.
+{%- endcomment -%}
+{{ 'product.css' | asset_url | stylesheet_tag }}
+<section class="section scheme-{{ section.settings.scheme }}" id="{{ section.settings.anchor | default: section.id }}" aria-labelledby="Heading-{{ section.id }}">
+  <div class="container">
+    <div class="section-head">
+      {%- if section.settings.eyebrow != blank -%}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+      <h2 class="h2" id="Heading-{{ section.id }}">{{ section.settings.heading }}</h2>
+    </div>
+
+    <div class="specs__grid" style="--cols: {{ section.blocks.size | at_most: 3 }}">
+      {%- for block in section.blocks -%}
+        <div class="specs__card" {{ block.shopify_attributes }}>
+          <h3 class="h3 specs__title">{% render 'icon', name: block.settings.icon %}{{ block.settings.title }}</h3>
+          {%- case block.type -%}
+            {%- when 'included' -%}
+              {%- assign lines = block.settings.items | newline_to_br | split: '<br />' -%}
+              <ul class="specs__included" role="list">
+                {%- for line in lines -%}
+                  {%- assign parts = line | strip | split: '|' -%}
+                  {%- if parts.size > 1 -%}
+                    <li><span class="specs__qty">{{ parts[0] | strip }}</span><span>{{ parts[1] | strip }}</span></li>
+                  {%- elsif parts.size == 1 -%}
+                    <li><span class="specs__qty">1×</span><span>{{ parts[0] | strip }}</span></li>
+                  {%- endif -%}
+                {%- endfor -%}
+              </ul>
+            {%- when 'specs' -%}
+              {%- assign lines = block.settings.items | newline_to_br | split: '<br />' -%}
+              <table class="specs__table">
+                <tbody>
+                  {%- for line in lines -%}
+                    {%- assign parts = line | strip | split: ':' -%}
+                    {%- if parts.size > 1 -%}
+                      {%- assign label = parts | first -%}
+                      {%- assign label_prefix = label | append: ':' -%}
+                      <tr><th scope="row">{{ label | strip }}</th><td>{{ line | strip | remove_first: label_prefix | strip }}</td></tr>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </tbody>
+              </table>
+            {%- else -%}
+              <div class="rte muted">{{ block.settings.text }}</div>
+              {%- if block.settings.link_label != blank and block.settings.link != blank -%}
+                <a class="link-arrow" href="{{ block.settings.link }}">{{ block.settings.link_label }} {% render 'icon', name: 'arrow-right' %}</a>
+              {%- endif -%}
+          {%- endcase -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Specs & what's included",
+  "tag": "div",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "select",
+      "id": "scheme",
+      "label": "Colour scheme",
+      "options": [
+        { "value": "dark", "label": "Dark" },
+        { "value": "surface", "label": "Dark grey" },
+        { "value": "light", "label": "Light" }
+      ],
+      "default": "surface"
+    },
+    { "type": "text", "id": "anchor", "label": "Anchor ID", "default": "specs" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "The details" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What you get, and what it fits." }
+  ],
+  "blocks": [
+    {
+      "type": "included",
+      "name": "What's included",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "In the box" },
+        { "type": "select", "id": "icon", "label": "Icon", "options": [{"value": "truck", "label": "Truck"}, {"value": "return", "label": "Returns"}, {"value": "shield", "label": "Shield"}, {"value": "support", "label": "Support"}, {"value": "wireless", "label": "Wireless"}, {"value": "bluetooth", "label": "Bluetooth"}, {"value": "sliders", "label": "Sliders"}, {"value": "sound", "label": "Speaker"}, {"value": "music", "label": "Music"}, {"value": "wave", "label": "Waveform"}, {"value": "wrench", "label": "Wrench"}, {"value": "car", "label": "Car"}, {"value": "bolt", "label": "Power"}, {"value": "droplet", "label": "Weather"}, {"value": "phone", "label": "Phone"}, {"value": "clock", "label": "Clock"}, {"value": "lock", "label": "Lock"}, {"value": "box", "label": "Box"}, {"value": "button", "label": "Button"}, {"value": "gauge", "label": "Gauge"}, {"value": "layers", "label": "Layers"}, {"value": "star", "label": "Star"}, {"value": "globe", "label": "Globe"}, {"value": "scale", "label": "Legal"}, {"value": "mail", "label": "Email"}, {"value": "info", "label": "Info"}, {"value": "check-circle", "label": "Check"}], "default": "box" },
+        { "type": "textarea", "id": "items", "label": "Items", "info": "One per line, as quantity|item — e.g. 1×|Horn unit", "default": "1×|HornHub horn unit\n1×|Wireless button with mount\n1×|12V wiring harness with inline fuse\n1×|Mounting bracket and fixings\n1×|Step-by-step install guide" }
+      ]
+    },
+    {
+      "type": "specs",
+      "name": "Specifications",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Specifications" },
+        { "type": "select", "id": "icon", "label": "Icon", "options": [{"value": "truck", "label": "Truck"}, {"value": "return", "label": "Returns"}, {"value": "shield", "label": "Shield"}, {"value": "support", "label": "Support"}, {"value": "wireless", "label": "Wireless"}, {"value": "bluetooth", "label": "Bluetooth"}, {"value": "sliders", "label": "Sliders"}, {"value": "sound", "label": "Speaker"}, {"value": "music", "label": "Music"}, {"value": "wave", "label": "Waveform"}, {"value": "wrench", "label": "Wrench"}, {"value": "car", "label": "Car"}, {"value": "bolt", "label": "Power"}, {"value": "droplet", "label": "Weather"}, {"value": "phone", "label": "Phone"}, {"value": "clock", "label": "Clock"}, {"value": "lock", "label": "Lock"}, {"value": "box", "label": "Box"}, {"value": "button", "label": "Button"}, {"value": "gauge", "label": "Gauge"}, {"value": "layers", "label": "Layers"}, {"value": "star", "label": "Star"}, {"value": "globe", "label": "Globe"}, {"value": "scale", "label": "Legal"}, {"value": "mail", "label": "Email"}, {"value": "info", "label": "Info"}, {"value": "check-circle", "label": "Check"}], "default": "gauge" },
+        { "type": "textarea", "id": "items", "label": "Specs", "info": "One per line, as Label: value", "default": "Power: 12V vehicle supply\nControl: Wireless button + phone app\nSounds: Built-in library + your own clips\nHousing: Weather-sealed for the engine bay\nButton power: Replaceable coin-cell battery\nInstall time: 30–60 minutes (typical)" }
+      ]
+    },
+    {
+      "type": "card",
+      "name": "Text card",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Compatibility" },
+        { "type": "select", "id": "icon", "label": "Icon", "options": [{"value": "truck", "label": "Truck"}, {"value": "return", "label": "Returns"}, {"value": "shield", "label": "Shield"}, {"value": "support", "label": "Support"}, {"value": "wireless", "label": "Wireless"}, {"value": "bluetooth", "label": "Bluetooth"}, {"value": "sliders", "label": "Sliders"}, {"value": "sound", "label": "Speaker"}, {"value": "music", "label": "Music"}, {"value": "wave", "label": "Waveform"}, {"value": "wrench", "label": "Wrench"}, {"value": "car", "label": "Car"}, {"value": "bolt", "label": "Power"}, {"value": "droplet", "label": "Weather"}, {"value": "phone", "label": "Phone"}, {"value": "clock", "label": "Clock"}, {"value": "lock", "label": "Lock"}, {"value": "box", "label": "Box"}, {"value": "button", "label": "Button"}, {"value": "gauge", "label": "Gauge"}, {"value": "layers", "label": "Layers"}, {"value": "star", "label": "Star"}, {"value": "globe", "label": "Globe"}, {"value": "scale", "label": "Legal"}, {"value": "mail", "label": "Email"}, {"value": "info", "label": "Info"}, {"value": "check-circle", "label": "Check"}], "default": "car" },
+        { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Designed for cars, vans and pickups with a standard 12V electrical system. Not sure about yours? Send us your make, model and year.</p>" },
+        { "type": "text", "id": "link_label", "label": "Link label" },
+        { "type": "url", "id": "link", "label": "Link" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Specs & what's included",
+      "blocks": [
+        { "type": "included" },
+        { "type": "specs" },
+        { "type": "card" }
+      ]
+    }
+  ]
+}
+{% endschema %}

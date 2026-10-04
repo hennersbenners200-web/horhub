@@ -1,0 +1,143 @@
+{%- liquid
+  assign menu = section.settings.menu
+  assign cart_href = routes.cart_url
+-%}
+<div class="header-wrapper">
+  <header class="header">
+    <div class="container header__inner">
+      <div class="header__left">
+        <button
+          type="button"
+          class="icon-btn header__menu-toggle"
+          aria-controls="MenuDrawer"
+          aria-expanded="false"
+          aria-label="{{ 'accessibility.open_menu' | t }}"
+          data-menu-open
+        >
+          {% render 'icon', name: 'menu' %}
+        </button>
+        <span class="header__logo-desktop">{% render 'wordmark' %}</span>
+      </div>
+
+      <span class="header__logo-mobile">{% render 'wordmark' %}</span>
+
+      {%- if menu.links.size > 0 -%}
+        <nav class="header__nav" aria-label="{{ 'accessibility.main_navigation' | t }}">
+          <ul role="list">
+            {%- for link in menu.links -%}
+              <li>
+                <a href="{{ link.url }}" {% if link.current %}aria-current="page"{% endif %}>{{ link.title }}</a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </nav>
+      {%- endif -%}
+
+      <div class="header__right">
+        <a class="icon-btn" href="{{ routes.search_url }}" aria-label="{{ 'general.search' | t }}">
+          {% render 'icon', name: 'search' %}
+        </a>
+        {%- if shop.customer_accounts_enabled -%}
+          <a class="icon-btn header__account" href="{{ routes.account_url }}" aria-label="{{ 'general.account' | t }}">
+            {% render 'icon', name: 'user' %}
+          </a>
+        {%- endif -%}
+        <a class="icon-btn" href="{{ cart_href }}" data-cart-open aria-label="{{ 'cart.open_cart' | t: count: cart.item_count }}">
+          {% render 'icon', name: 'cart' %}
+          <span class="cart-count" data-cart-count-bubble {% if cart.item_count == 0 %}hidden{% endif %}>{{ cart.item_count }}</span>
+        </a>
+        {%- if section.settings.cta_label != blank and section.settings.cta_link != blank -%}
+          <a class="btn btn--primary btn--sm header__cta" href="{{ section.settings.cta_link }}">{{ section.settings.cta_label }}</a>
+        {%- endif -%}
+      </div>
+    </div>
+  </header>
+</div>
+
+<menu-drawer class="drawer drawer--left" id="MenuDrawer">
+  <div class="drawer__overlay" data-drawer-close></div>
+  <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="{{ 'accessibility.menu' | t }}" tabindex="-1">
+    <div class="drawer__header">
+      {% render 'wordmark' %}
+      <button type="button" class="icon-btn" data-drawer-close aria-label="{{ 'accessibility.close' | t }}">
+        {% render 'icon', name: 'close' %}
+      </button>
+    </div>
+    <div class="drawer__body">
+      <nav aria-label="{{ 'accessibility.main_navigation' | t }}">
+        <ul class="mobile-nav__list" role="list">
+          {%- for link in menu.links -%}
+            <li>
+              <a href="{{ link.url }}" {% if link.current %}aria-current="page"{% endif %} data-drawer-link>
+                {{ link.title }}
+                {% render 'icon', name: 'arrow-right' %}
+              </a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </nav>
+      <div class="mobile-nav__extras">
+        {%- if section.settings.cta_label != blank and section.settings.cta_link != blank -%}
+          <a class="btn btn--primary btn--lg btn--block" href="{{ section.settings.cta_link }}">{{ section.settings.cta_label }}</a>
+        {%- endif -%}
+        {%- if shop.customer_accounts_enabled -%}
+          <a class="btn btn--secondary btn--block" href="{{ routes.account_url }}">{% render 'icon', name: 'user' %}{{ 'general.account' | t }}</a>
+        {%- endif -%}
+      </div>
+      {%- if section.settings.drawer_trust_1 != blank or section.settings.drawer_trust_2 != blank -%}
+        <ul class="mobile-nav__trust" role="list">
+          {%- if section.settings.drawer_trust_1 != blank -%}<li>{% render 'icon', name: 'truck' %}{{ section.settings.drawer_trust_1 }}</li>{%- endif -%}
+          {%- if section.settings.drawer_trust_2 != blank -%}<li>{% render 'icon', name: 'return' %}{{ section.settings.drawer_trust_2 }}</li>{%- endif -%}
+        </ul>
+      {%- endif -%}
+    </div>
+  </div>
+</menu-drawer>
+
+{% schema %}
+{
+  "name": "Header",
+  "class": "header-section",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu",
+      "info": "Recommended links: Shop, How it works (/#how-it-works), FAQ (/#faq), Contact."
+    },
+    {
+      "type": "header",
+      "content": "Call to action"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Button label",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Button link",
+      "default": "/collections/all"
+    },
+    {
+      "type": "header",
+      "content": "Mobile menu"
+    },
+    {
+      "type": "text",
+      "id": "drawer_trust_1",
+      "label": "Trust line 1",
+      "default": "Free tracked shipping"
+    },
+    {
+      "type": "text",
+      "id": "drawer_trust_2",
+      "label": "Trust line 2",
+      "default": "30-day hassle-free returns"
+    }
+  ]
+}
+{% endschema %}

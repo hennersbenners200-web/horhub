@@ -1,0 +1,27 @@
+{%- comment -%}
+  Star rating.
+  Accepts:
+  - rating: number between 0 and 5
+  - count: number of reviews (optional)
+  - size: 'lg' (optional)
+{%- endcomment -%}
+{%- liquid
+  assign rating_decimal = rating | times: 1.0
+  assign full_stars = rating_decimal | floor
+  assign remainder = rating_decimal | minus: full_stars
+  assign partial_star = full_stars | plus: 1
+-%}
+<span class="stars{% if size == 'lg' %} stars--lg{% endif %}" role="img" aria-label="{{ 'products.rating_label' | t: rating: rating_decimal }}">
+  {%- for i in (1..5) -%}
+    {%- if i <= full_stars -%}
+      {% render 'icon', name: 'star' %}
+    {%- elsif i == partial_star and remainder >= 0.25 -%}
+      {%- if remainder >= 0.75 -%}{% render 'icon', name: 'star' %}{%- else -%}{% render 'icon', name: 'star-half' %}{%- endif -%}
+    {%- else -%}
+      {% render 'icon', name: 'star-empty' %}
+    {%- endif -%}
+  {%- endfor -%}
+</span>
+{%- if count -%}
+  <span class="rating-count">{{ 'products.review_count' | t: count: count }}</span>
+{%- endif -%}

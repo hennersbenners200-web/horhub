@@ -1,0 +1,198 @@
+{%- comment -%}
+  Sound customisation showcase. Each block is a sound category with up to four
+  sounds. Add an audio file URL (Content → Files) to a sound to make it playable;
+  sounds without audio are shown as a list only.
+{%- endcomment -%}
+{%- assign bar_heights = '40,70,100,55,85,30,65,90,45,75' | split: ',' -%}
+<section class="section sound-lab scheme-{{ section.settings.scheme }}" id="{{ section.settings.anchor | default: section.id }}" aria-labelledby="Heading-{{ section.id }}">
+  <div class="container sound-lab__grid">
+    <sound-lab class="sound-lab__content">
+      <div class="section-head">
+        {%- if section.settings.eyebrow != blank -%}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+        <h2 class="h2" id="Heading-{{ section.id }}">{{ section.settings.heading }}</h2>
+        {%- if section.settings.text != blank -%}<p class="lead">{{ section.settings.text }}</p>{%- endif -%}
+      </div>
+
+      {%- if section.blocks.size > 0 -%}
+        <div class="sound-lab__tabs" role="tablist" aria-label="{{ 'sections.sound_categories' | t }}">
+          {%- for block in section.blocks -%}
+            <button
+              type="button"
+              class="sound-chip"
+              role="tab"
+              id="SoundTab-{{ block.id }}"
+              aria-controls="SoundPanel-{{ block.id }}"
+              aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+              tabindex="{% if forloop.first %}0{% else %}-1{% endif %}"
+              {{ block.shopify_attributes }}
+            >
+              {% render 'icon', name: block.settings.icon %}{{ block.settings.title }}
+            </button>
+          {%- endfor -%}
+        </div>
+
+        {%- for block in section.blocks -%}
+          <div
+            class="sound-panel"
+            role="tabpanel"
+            id="SoundPanel-{{ block.id }}"
+            aria-labelledby="SoundTab-{{ block.id }}"
+            {% unless forloop.first %}hidden{% endunless %}
+          >
+            <ul class="sound-panel__list" role="list">
+              {%- for i in (1..4) -%}
+                {%- liquid
+                  assign name_key = 'sound_' | append: i | append: '_name'
+                  assign meta_key = 'sound_' | append: i | append: '_meta'
+                  assign audio_key = 'sound_' | append: i | append: '_audio'
+                  assign sound_name = block.settings[name_key]
+                  assign sound_audio = block.settings[audio_key]
+                -%}
+                {%- if sound_name != blank -%}
+                  <li class="sound-track">
+                    {%- if sound_audio != blank -%}
+                      <button type="button" class="sound-track__play" data-sound-src="{{ sound_audio }}" aria-pressed="false" aria-label="{{ 'sections.play_sound' | t: name: sound_name | escape }}">
+                        {% render 'icon', name: 'play' %}{% render 'icon', name: 'pause' %}
+                      </button>
+                    {%- else -%}
+                      <span class="sound-track__icon">{% render 'icon', name: 'sound' %}</span>
+                    {%- endif -%}
+                    <span>
+                      <span class="sound-track__name">{{ sound_name }}</span><br>
+                      <span class="sound-track__meta">{{ block.settings[meta_key] }}</span>
+                    </span>
+                    <span class="sound-track__bars" aria-hidden="true">
+                      {%- for h in bar_heights -%}<span style="height: {{ h }}%"></span>{%- endfor -%}
+                    </span>
+                  </li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endfor -%}
+      {%- endif -%}
+
+      {%- if section.settings.note != blank -%}
+        <p class="small muted sound-lab__note">{{ section.settings.note }}</p>
+      {%- endif -%}
+    </sound-lab>
+
+    <div class="sound-lab__visual">
+      <div class="media">
+        {% render 'media',
+          image: section.settings.image,
+          sizes: '(min-width: 990px) 50vw, 100vw',
+          file: 'sound-app-in-hand.jpg (1800 × 1800px)',
+          description: 'Hand holding a phone showing the HornHub app sound library, car interior softly blurred behind.'
+        %}
+      </div>
+      {%- if section.settings.stat_a_value != blank -%}
+        <p class="sound-lab__stat sound-lab__stat--a"><strong>{{ section.settings.stat_a_value }}</strong><span>{{ section.settings.stat_a_label }}</span></p>
+      {%- endif -%}
+      {%- if section.settings.stat_b_value != blank -%}
+        <p class="sound-lab__stat sound-lab__stat--b"><strong>{{ section.settings.stat_b_value }}</strong><span>{{ section.settings.stat_b_label }}</span></p>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Sound lab",
+  "tag": "div",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "select",
+      "id": "scheme",
+      "label": "Colour scheme",
+      "options": [
+        { "value": "dark", "label": "Dark" },
+        { "value": "surface", "label": "Dark grey" },
+        { "value": "light", "label": "Light" }
+      ],
+      "default": "surface"
+    },
+    { "type": "text", "id": "anchor", "label": "Anchor ID", "default": "sounds" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Sound customisation" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Pick a vibe. Change it tomorrow." },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Polite tap at the lights, full send at the meet. Load a different sound for every mood and swap them in seconds." },
+    { "type": "text", "id": "note", "label": "Note", "default": "Sound names shown are examples of categories. Available sounds depend on the app version and what you load yourself." },
+    { "type": "image_picker", "id": "image", "label": "Image", "info": "Square, 1800 × 1800px." },
+    { "type": "header", "content": "Image stats" },
+    { "type": "text", "id": "stat_a_value", "label": "Stat 1 value", "default": "∞" },
+    { "type": "text", "id": "stat_a_label", "label": "Stat 1 label", "default": "Load your own clips" },
+    { "type": "text", "id": "stat_b_value", "label": "Stat 2 value", "default": "1 tap" },
+    { "type": "text", "id": "stat_b_label", "label": "Stat 2 label", "default": "To switch sounds" }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Sound category",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Category name", "default": "Classics" },
+        { "type": "select", "id": "icon", "label": "Icon", "options": [{"value": "truck", "label": "Truck"}, {"value": "return", "label": "Returns"}, {"value": "shield", "label": "Shield"}, {"value": "support", "label": "Support"}, {"value": "wireless", "label": "Wireless"}, {"value": "bluetooth", "label": "Bluetooth"}, {"value": "sliders", "label": "Sliders"}, {"value": "sound", "label": "Speaker"}, {"value": "music", "label": "Music"}, {"value": "wave", "label": "Waveform"}, {"value": "wrench", "label": "Wrench"}, {"value": "car", "label": "Car"}, {"value": "bolt", "label": "Power"}, {"value": "droplet", "label": "Weather"}, {"value": "phone", "label": "Phone"}, {"value": "clock", "label": "Clock"}, {"value": "lock", "label": "Lock"}, {"value": "box", "label": "Box"}, {"value": "button", "label": "Button"}, {"value": "gauge", "label": "Gauge"}, {"value": "layers", "label": "Layers"}, {"value": "star", "label": "Star"}, {"value": "globe", "label": "Globe"}, {"value": "scale", "label": "Legal"}, {"value": "mail", "label": "Email"}, {"value": "info", "label": "Info"}, {"value": "check-circle", "label": "Check"}], "default": "music" },
+        { "type": "paragraph", "content": "To make a sound playable, upload an MP3 in Content → Files and paste its URL." },
+        { "type": "text", "id": "sound_1_name", "label": "Sound 1 name" },
+        { "type": "text", "id": "sound_1_meta", "label": "Sound 1 description" },
+        { "type": "text", "id": "sound_1_audio", "label": "Sound 1 audio URL" },
+        { "type": "text", "id": "sound_2_name", "label": "Sound 2 name" },
+        { "type": "text", "id": "sound_2_meta", "label": "Sound 2 description" },
+        { "type": "text", "id": "sound_2_audio", "label": "Sound 2 audio URL" },
+        { "type": "text", "id": "sound_3_name", "label": "Sound 3 name" },
+        { "type": "text", "id": "sound_3_meta", "label": "Sound 3 description" },
+        { "type": "text", "id": "sound_3_audio", "label": "Sound 3 audio URL" },
+        { "type": "text", "id": "sound_4_name", "label": "Sound 4 name" },
+        { "type": "text", "id": "sound_4_meta", "label": "Sound 4 description" },
+        { "type": "text", "id": "sound_4_audio", "label": "Sound 4 audio URL" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sound lab",
+      "blocks": [
+        {
+          "type": "category",
+          "settings": {
+            "title": "Classics", "icon": "car",
+            "sound_1_name": "Dual-tone European", "sound_1_meta": "Deep, clean, unmistakably premium",
+            "sound_2_name": "Truck air horn", "sound_2_meta": "Big-rig energy for small cars",
+            "sound_3_name": "Vintage bulb", "sound_3_meta": "Old-school charm",
+            "sound_4_name": "Chirp", "sound_4_meta": "A short, friendly hello"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "title": "Funny", "icon": "star",
+            "sound_1_name": "Goat", "sound_1_meta": "Guaranteed double-take",
+            "sound_2_name": "Duck squad", "sound_2_meta": "For the school run",
+            "sound_3_name": "Cartoon boing", "sound_3_meta": "Pure comedy",
+            "sound_4_name": "Sad trombone", "sound_4_meta": "When someone misses the green light"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "title": "Melodies", "icon": "music",
+            "sound_1_name": "Victory fanfare", "sound_1_meta": "Arrive like you won",
+            "sound_2_name": "Doorbell", "sound_2_meta": "Ding-dong, I'm outside",
+            "sound_3_name": "Arcade level-up", "sound_3_meta": "8-bit nostalgia",
+            "sound_4_name": "Game show win", "sound_4_meta": "For parking-spot victories"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "title": "Your own", "icon": "phone",
+            "sound_1_name": "Record a clip", "sound_1_meta": "Your voice, your catchphrase",
+            "sound_2_name": "Upload an audio file", "sound_2_meta": "Any short clip from your phone",
+            "sound_3_name": "Trim and preview", "sound_3_meta": "Get the timing just right"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

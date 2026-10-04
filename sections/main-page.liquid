@@ -1,0 +1,15 @@
+<section class="scheme-dark page-section">
+  <div class="container container--narrow">
+    <header class="page-header">
+      <h1 class="h1">{{ page.title }}</h1>
+    </header>
+    <div class="rte">{{ page.content }}</div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Page content",
+  "tag": "div"
+}
+{% endschema %}

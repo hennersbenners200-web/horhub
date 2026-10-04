@@ -1,0 +1,80 @@
+<section class="scheme-dark page-section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="stack">
+        <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+        <h1 class="h1">{{ page.title }}</h1>
+        {%- if page.content != blank -%}
+          <div class="rte lead">{{ page.content }}</div>
+        {%- elsif section.settings.text != blank -%}
+          <p class="lead">{{ section.settings.text }}</p>
+        {%- endif -%}
+        {%- for block in section.blocks -%}
+          <div class="contact-card" {{ block.shopify_attributes }}>
+            {% render 'icon', name: block.settings.icon %}
+            <p class="h4">{{ block.settings.title }}</p>
+            <div class="small muted rte">{{ block.settings.text }}</div>
+          </div>
+        {%- endfor -%}
+      </div>
+
+      <div>
+        {%- form 'contact', id: 'ContactForm', class: 'form-grid' -%}
+          {%- if form.posted_successfully? -%}
+            <p class="form-message form-message--success" role="status">{{ 'contact.success' | t }}</p>
+          {%- elsif form.errors -%}
+            <div class="form-message form-message--error" role="alert">{{ form.errors | default_errors }}</div>
+          {%- endif -%}
+          <div class="form-grid form-grid--2">
+            <div>
+              <label class="label" for="ContactName">{{ 'contact.name' | t }}</label>
+              <input class="input" id="ContactName" type="text" name="contact[name]" autocomplete="name" value="{{ form.name }}">
+            </div>
+            <div>
+              <label class="label" for="ContactEmail">{{ 'contact.email' | t }} <span aria-hidden="true">*</span></label>
+              <input class="input" id="ContactEmail" type="email" name="contact[email]" autocomplete="email" value="{{ form.email }}" required aria-required="true">
+            </div>
+          </div>
+          <div>
+            <label class="label" for="ContactVehicle">{{ 'contact.vehicle' | t }}</label>
+            <input class="input" id="ContactVehicle" type="text" name="contact[vehicle]" placeholder="{{ 'contact.vehicle_placeholder' | t }}" value="{{ form.vehicle }}">
+          </div>
+          <div>
+            <label class="label" for="ContactOrder">{{ 'contact.order' | t }}</label>
+            <input class="input" id="ContactOrder" type="text" name="contact[order_number]" value="{{ form.order_number }}">
+          </div>
+          <div>
+            <label class="label" for="ContactBody">{{ 'contact.message' | t }} <span aria-hidden="true">*</span></label>
+            <textarea class="textarea" id="ContactBody" name="contact[body]" required aria-required="true">{{ form.body }}</textarea>
+          </div>
+          <div>
+            <button type="submit" class="btn btn--primary btn--lg">{{ 'contact.send' | t }}</button>
+          </div>
+        {%- endform -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contact form",
+  "tag": "div",
+  "max_blocks": 4,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Support" },
+    { "type": "textarea", "id": "text", "label": "Text", "info": "Used when the page has no content.", "default": "Questions about fit, install or an order? Send us a message and a real person will reply, usually within one working day." }
+  ],
+  "blocks": [
+    {
+      "type": "info",
+      "name": "Info card",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "Icon", "options": [{"value": "truck", "label": "Truck"}, {"value": "return", "label": "Returns"}, {"value": "shield", "label": "Shield"}, {"value": "support", "label": "Support"}, {"value": "wireless", "label": "Wireless"}, {"value": "bluetooth", "label": "Bluetooth"}, {"value": "sliders", "label": "Sliders"}, {"value": "sound", "label": "Speaker"}, {"value": "music", "label": "Music"}, {"value": "wave", "label": "Waveform"}, {"value": "wrench", "label": "Wrench"}, {"value": "car", "label": "Car"}, {"value": "bolt", "label": "Power"}, {"value": "droplet", "label": "Weather"}, {"value": "phone", "label": "Phone"}, {"value": "clock", "label": "Clock"}, {"value": "lock", "label": "Lock"}, {"value": "box", "label": "Box"}, {"value": "button", "label": "Button"}, {"value": "gauge", "label": "Gauge"}, {"value": "layers", "label": "Layers"}, {"value": "star", "label": "Star"}, {"value": "globe", "label": "Globe"}, {"value": "scale", "label": "Legal"}, {"value": "mail", "label": "Email"}, {"value": "info", "label": "Info"}, {"value": "check-circle", "label": "Check"}], "default": "mail" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Email" },
+        { "type": "richtext", "id": "text", "label": "Text", "default": "<p>We reply within one working day.</p>" }
+      ]
+    }
+  ]
+}
+{% endschema %}

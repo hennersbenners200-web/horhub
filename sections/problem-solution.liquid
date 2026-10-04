@@ -1,0 +1,89 @@
+{%- assign before_points = section.settings.before_points | newline_to_br | split: '<br />' -%}
+{%- assign after_points = section.settings.after_points | newline_to_br | split: '<br />' -%}
+<section class="section scheme-{{ section.settings.scheme }}" aria-labelledby="Heading-{{ section.id }}">
+  <div class="container">
+    <div class="section-head">
+      {%- if section.settings.eyebrow != blank -%}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+      <h2 class="h2" id="Heading-{{ section.id }}">{{ section.settings.heading }}</h2>
+      {%- if section.settings.text != blank -%}<p class="lead">{{ section.settings.text }}</p>{%- endif -%}
+    </div>
+
+    <div class="ps__grid">
+      <div class="ps__card ps__card--before">
+        <p class="ps__label">{{ section.settings.before_label }}</p>
+        <div class="ps__wave" aria-hidden="true">
+          {%- for i in (1..40) -%}<span style="height: 6px"></span>{%- endfor -%}
+        </div>
+        <h3 class="h3">{{ section.settings.before_title }}</h3>
+        <ul class="ps__list" role="list">
+          {%- for point in before_points -%}
+            {%- assign point_text = point | strip -%}
+            {%- if point_text != blank -%}<li>{% render 'icon', name: 'x-circle' %}<span>{{ point_text }}</span></li>{%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+
+      <div class="ps__card ps__card--after">
+        <p class="ps__label">{{ section.settings.after_label }}</p>
+        <div class="ps__wave" aria-hidden="true">
+          {%- assign heights = '10,18,30,22,40,28,46,36,20,12,26,44,48,32,18,38,24,14,30,42,48,34,22,16,28,40,46,30,20,10,24,36,48,40,26,18,30,22,14,8' | split: ',' -%}
+          {%- for h in heights -%}<span style="height: {{ h }}px"></span>{%- endfor -%}
+        </div>
+        <h3 class="h3">{{ section.settings.after_title }}</h3>
+        <ul class="ps__list" role="list">
+          {%- for point in after_points -%}
+            {%- assign point_text = point | strip -%}
+            {%- if point_text != blank -%}<li>{% render 'icon', name: 'check-circle' %}<span>{{ point_text }}</span></li>{%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Problem → solution",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "select",
+      "id": "scheme",
+      "label": "Colour scheme",
+      "options": [
+        { "value": "dark", "label": "Dark" },
+        { "value": "surface", "label": "Dark grey" },
+        { "value": "light", "label": "Light" }
+      ],
+      "default": "dark"
+    },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "The problem" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Every car on the road sounds the same." },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "You chose the wheels, the wrap, the exhaust. Then the horn goes off and it's the same flat beep as a rental hatchback."
+    },
+    { "type": "header", "content": "Before" },
+    { "type": "text", "id": "before_label", "label": "Label", "default": "Stock horn" },
+    { "type": "text", "id": "before_title", "label": "Title", "default": "One tone. Zero personality." },
+    {
+      "type": "textarea",
+      "id": "before_points",
+      "label": "Points (one per line)",
+      "default": "The same note as millions of other cars\nNo way to change it without rewiring\nSays nothing about you or your build"
+    },
+    { "type": "header", "content": "After" },
+    { "type": "text", "id": "after_label", "label": "Label", "default": "With HornHub" },
+    { "type": "text", "id": "after_title", "label": "Title", "default": "Any sound. Your call." },
+    {
+      "type": "textarea",
+      "id": "after_points",
+      "label": "Points (one per line)",
+      "default": "Load the sounds you actually want\nSwitch them from your phone in seconds\nAdds to your car — your factory horn stays put"
+    }
+  ],
+  "presets": [{ "name": "Problem → solution" }]
+}
+{% endschema %}

@@ -1,0 +1,66 @@
+<section class="scheme-dark page-section" data-cart-section="{{ section.id }}">
+  <div class="container">
+    <header class="page-header">
+      <h1 class="h1">{{ 'cart.title' | t }}</h1>
+    </header>
+
+    {%- if cart.item_count > 0 -%}
+      <div class="cart-page__grid">
+        <form action="{{ routes.cart_url }}" method="post" id="CartPageForm">
+          <cart-items>
+            {% render 'cart-line-items', context: 'page' %}
+          </cart-items>
+          <noscript><button type="submit" class="btn btn--secondary" name="update">{{ 'cart.update' | t }}</button></noscript>
+          {%- if section.settings.show_note -%}
+            <div class="cart-page__note">
+              <label class="label" for="CartNote">{{ 'cart.note' | t }}</label>
+              <textarea class="textarea" id="CartNote" name="note">{{ cart.note }}</textarea>
+            </div>
+          {%- endif -%}
+        </form>
+
+        <aside class="cart-page__summary" aria-label="{{ 'cart.summary' | t }}">
+          <p class="cart-error" role="alert" data-cart-error hidden></p>
+          {%- for discount in cart.cart_level_discount_applications -%}
+            <div class="cart-summary__row cart-summary__discount">
+              <span>{{ discount.title }}</span>
+              <span class="accent">−{{ discount.total_allocated_amount | money }}</span>
+            </div>
+          {%- endfor -%}
+          <div class="cart-summary__row">
+            <span>{{ 'cart.subtotal' | t }}</span>
+            <span class="cart-summary__total">{{ cart.total_price | money_with_currency }}</span>
+          </div>
+          <p class="cart-summary__note">{{ 'cart.taxes_shipping_note' | t }}</p>
+          <button type="submit" name="checkout" form="CartPageForm" class="btn btn--primary btn--lg btn--block">
+            {% render 'icon', name: 'lock' %}<span>{{ 'cart.checkout' | t }}</span>
+          </button>
+          {%- if additional_checkout_buttons -%}
+            <div class="cart-page__dynamic">{{ content_for_additional_checkout_buttons }}</div>
+          {%- endif -%}
+          {%- if settings.cart_trust_note != blank -%}
+            <p class="cart-summary__trust">{% render 'icon', name: 'shield' %}{{ settings.cart_trust_note }}</p>
+          {%- endif -%}
+          {% render 'payment-icons' %}
+        </aside>
+      </div>
+    {%- else -%}
+      <div class="cart-empty">
+        {% render 'icon', name: 'cart', class: 'cart-empty__icon' %}
+        <p class="h3">{{ 'cart.empty' | t }}</p>
+        <p class="muted">{{ 'cart.empty_text' | t }}</p>
+        <a class="btn btn--primary btn--lg" href="{{ settings.cart_empty_product.url | default: routes.all_products_collection_url }}">{{ 'cart.continue_shopping' | t }}</a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Cart",
+  "tag": "div",
+  "settings": [
+    { "type": "checkbox", "id": "show_note", "label": "Show order note", "default": false }
+  ]
+}
+{% endschema %}

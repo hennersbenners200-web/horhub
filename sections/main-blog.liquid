@@ -1,0 +1,31 @@
+<section class="scheme-dark page-section">
+  <div class="container">
+    <header class="page-header">
+      <h1 class="h1">{{ blog.title }}</h1>
+    </header>
+    {%- paginate blog.articles by 9 -%}
+      <ul class="blog-grid" role="list">
+        {%- for article in blog.articles -%}
+          <li>
+            <article class="article-card card">
+              <div class="article-card__media">
+                {% render 'media', image: article.image, sizes: '(min-width: 1100px) 33vw, (min-width: 750px) 50vw, 100vw', description: article.title %}
+              </div>
+              <p class="xsmall muted"><time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'date' }}</time></p>
+              <h2 class="h3 card__title"><a href="{{ article.url }}">{{ article.title }}</a></h2>
+              <p class="muted small">{{ article.excerpt_or_content | strip_html | truncatewords: 24 }}</p>
+            </article>
+          </li>
+        {%- endfor -%}
+      </ul>
+      {% render 'pagination', paginate: paginate %}
+    {%- endpaginate -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Blog posts",
+  "tag": "div"
+}
+{% endschema %}

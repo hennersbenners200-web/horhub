@@ -1,0 +1,43 @@
+{%- comment -%}
+  Add-to-cart form. Works without JavaScript (posts to /cart/add);
+  global.js upgrades it to an AJAX add that opens the cart drawer.
+
+  Accepts:
+  - product: product object (required)
+  - form_id: unique id for the form (required)
+  - show_quantity: boolean
+  - show_dynamic_checkout: boolean — renders Shopify's accelerated checkout buttons
+  - button_label: override for the add-to-cart label
+{%- endcomment -%}
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign label = 'products.add_to_cart' | t
+  if button_label != blank
+    assign label = button_label
+  endif
+-%}
+<product-form class="product-form">
+  {%- form 'product', product, id: form_id, class: 'product-form__form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+    <input type="hidden" name="id" value="{{ current_variant.id }}" data-variant-input {% unless current_variant.available %}disabled{% endunless %}>
+    <div class="product-form__row">
+      {%- if show_quantity -%}
+        {% render 'quantity-input', id: form_id, name: 'quantity', value: 1, min: 1, label: product.title %}
+      {%- endif -%}
+      <button
+        type="submit"
+        name="add"
+        class="btn btn--primary btn--lg product-form__submit"
+        data-add-button
+        {% unless current_variant.available %}disabled{% endunless %}
+      >
+        <span data-add-label>
+          {%- if current_variant.available -%}{{ label }}{%- else -%}{{ 'products.sold_out' | t }}{%- endif -%}
+        </span>
+      </button>
+    </div>
+    {%- if show_dynamic_checkout -%}
+      <div class="product-form__dynamic">{{ form | payment_button }}</div>
+    {%- endif -%}
+    <p class="form-message form-message--error product-form__error" role="alert" data-form-error hidden></p>
+  {%- endform -%}
+</product-form>

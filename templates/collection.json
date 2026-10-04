@@ -1,0 +1,56 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {}
+    },
+    "trust-strip": {
+      "type": "trust-strip",
+      "settings": {},
+      "blocks": {
+        "trust-strip-item-1": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "title": "Free tracked shipping",
+            "text": "Dispatched within 1 working day"
+          }
+        },
+        "trust-strip-item-2": {
+          "type": "item",
+          "settings": {
+            "icon": "return",
+            "title": "30-day returns",
+            "text": "Not for you? Send it back"
+          }
+        },
+        "trust-strip-item-3": {
+          "type": "item",
+          "settings": {
+            "icon": "shield",
+            "title": "12-month warranty",
+            "text": "Covered against defects"
+          }
+        },
+        "trust-strip-item-4": {
+          "type": "item",
+          "settings": {
+            "icon": "support",
+            "title": "Real human support",
+            "text": "Install help from our team"
+          }
+        }
+      },
+      "block_order": [
+        "trust-strip-item-1",
+        "trust-strip-item-2",
+        "trust-strip-item-3",
+        "trust-strip-item-4"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "trust-strip"
+  ]
+}

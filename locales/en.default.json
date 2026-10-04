@@ -1,0 +1,125 @@
+{
+  "general": {
+    "home": "Home",
+    "search": "Search",
+    "account": "Account",
+    "announcement": "Announcement",
+    "contact_us": "Contact us",
+    "rights": "All rights reserved.",
+    "payment_methods": "Payment methods",
+    "social_link": "HornHub on {{ network }}",
+    "pagination": "Pagination",
+    "previous_page": "Previous page",
+    "next_page": "Next page",
+    "404_title": "Wrong turn.",
+    "404_text": "The page you're looking for has moved or doesn't exist.",
+    "back_home": "Back to home"
+  },
+  "accessibility": {
+    "skip_to_content": "Skip to content",
+    "open_menu": "Open menu",
+    "menu": "Menu",
+    "main_navigation": "Main navigation",
+    "close": "Close"
+  },
+  "products": {
+    "add_to_cart": "Add to cart",
+    "sold_out": "Sold out",
+    "unavailable": "Unavailable",
+    "on_sale": "Sale",
+    "shop_now": "Shop now",
+    "choose_options": "Choose options",
+    "full_details": "Full details",
+    "from_price": "From {{ price }}",
+    "regular_price": "Regular price",
+    "sale_price": "Sale price",
+    "save_amount": "Save {{ amount }}",
+    "tax_included": "Tax included.",
+    "shipping_at_checkout_html": "<a href=\"{{ link }}\">Shipping</a> calculated at checkout.",
+    "gallery": "Product images",
+    "previous_media": "Previous image",
+    "next_media": "Next image",
+    "show_media": "Show image {{ number }}",
+    "quantity_for": "Quantity for {{ title }}",
+    "quantity_decrease": "Decrease quantity for {{ title }}",
+    "quantity_increase": "Increase quantity for {{ title }}",
+    "rating_label": "Rated {{ rating }} out of 5",
+    "review_count": {
+      "one": "{{ count }} review",
+      "other": "{{ count }} reviews"
+    }
+  },
+  "cart": {
+    "title": "Your cart",
+    "open_cart": {
+      "one": "Cart, {{ count }} item",
+      "other": "Cart, {{ count }} items"
+    },
+    "remove": "Remove",
+    "subtotal": "Subtotal",
+    "summary": "Order summary",
+    "taxes_shipping_note": "Taxes and shipping calculated at checkout.",
+    "checkout": "Checkout",
+    "update": "Update cart",
+    "note": "Order note",
+    "empty": "Your cart is empty",
+    "empty_text": "Your car is still using its factory horn. Let's fix that.",
+    "continue_shopping": "Continue shopping",
+    "shop_product": "Shop {{ title }}",
+    "error": "Something went wrong. Please try again."
+  },
+  "collections": {
+    "shop": "Shop",
+    "all_collections": "Collections",
+    "product_count": {
+      "one": "{{ count }} product",
+      "other": "{{ count }} products"
+    },
+    "sort_by": "Sort by",
+    "apply": "Apply",
+    "empty": "No products here yet."
+  },
+  "search": {
+    "title": "Search",
+    "label": "Search the store",
+    "placeholder": "Search products, guides and FAQs",
+    "results_count": {
+      "zero": "No results for “{{ terms }}”",
+      "one": "{{ count }} result for “{{ terms }}”",
+      "other": "{{ count }} results for “{{ terms }}”"
+    }
+  },
+  "contact": {
+    "name": "Name",
+    "email": "Email",
+    "vehicle": "Vehicle (optional)",
+    "vehicle_placeholder": "Make, model and year",
+    "order": "Order number (optional)",
+    "message": "Message",
+    "send": "Send message",
+    "success": "Thanks — we've got your message and will reply soon."
+  },
+  "newsletter": {
+    "label": "Email address",
+    "placeholder": "Your email",
+    "button": "Subscribe",
+    "notify": "Notify me",
+    "success": "You're on the list."
+  },
+  "password": {
+    "owner": "Store owner? Enter password",
+    "label": "Password",
+    "enter": "Enter"
+  },
+  "sections": {
+    "step": "Step {{ number }}",
+    "sound_categories": "Sound categories",
+    "play_sound": "Play {{ name }}",
+    "feature": "Feature",
+    "yes": "Included",
+    "no": "Not included",
+    "placeholder": "Placeholder",
+    "placeholder_reviews_notice": "Example reviews shown for layout only. They are not from real customers and will be replaced with genuine reviews.",
+    "verified_buyer": "Verified buyer"
+  }
+}
