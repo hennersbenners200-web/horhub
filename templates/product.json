@@ -113,6 +113,13 @@
           "settings": {
             "text": ""
           }
+        },
+        "recent-sales": {
+          "type": "recent_sales",
+          "settings": {
+            "text": "bought in the last month",
+            "icon": "none"
+          }
         }
       },
       "block_order": [
@@ -120,6 +127,7 @@
         "title",
         "rating",
         "price",
+        "recent-sales",
         "text",
         "highlights",
         "variant-picker",
@@ -405,49 +413,6 @@
     },
     "reviews": {
       "type": "reviews",
-      "blocks": {
-        "reviews-review-1": {
-          "type": "review",
-          "settings": {
-            "placeholder": true,
-            "rating": 5,
-            "title": "Best mod ever",
-            "body": "<p>I installed it yesterday i love how you can choose your own sound, very unique.</p>",
-            "author": "Daz Wong",
-            "detail": "Vauxhall Corsa· London",
-            "verified": false
-          }
-        },
-        "reviews-review-2": {
-          "type": "review",
-          "settings": {
-            "placeholder": true,
-            "rating": 5,
-            "title": "Wow. best upgrade I've bought",
-            "body": "<p>The sound is serioysly impressive and it gets a reaction everytime I use it. Instillation was straightforward, and being able to switch between different sounds makes it much more fun.</p>",
-            "author": "Alex M",
-            "detail": "BMW 3 Series · Chesterfield",
-            "verified": false
-          }
-        },
-        "reviews-review-3": {
-          "type": "review",
-          "settings": {
-            "placeholder": true,
-            "rating": 5,
-            "title": "Everyone asks where i got it from",
-            "body": "<p>One of the best little upgrades I've made to my car. Every time I use it someone ended up asking about it.</p>",
-            "author": "Jake R.",
-            "detail": "Volkswagen Golf GTI · Manchester",
-            "verified": false
-          }
-        }
-      },
-      "block_order": [
-        "reviews-review-1",
-        "reviews-review-2",
-        "reviews-review-3"
-      ],
       "settings": {
         "scheme": "dark",
         "anchor": "reviews",
