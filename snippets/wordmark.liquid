@@ -1,9 +1,9 @@
-{%- comment -%} Store logo: uploaded image if set in Theme settings → Brand, otherwise the HornHub text wordmark. {%- endcomment -%}
+{%- comment -%} Store logo: uploaded image if set in Theme settings → Brand, otherwise the Viral Horn text wordmark. {%- endcomment -%}
 <a href="{{ routes.root_url }}" class="logo" aria-label="{{ shop.name | escape }} – {{ 'general.home' | t }}">
   {%- if settings.logo != blank -%}
     {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio | round -%}
     {{ settings.logo | image_url: width: 480 | image_tag: width: settings.logo_width, height: logo_height, alt: shop.name, loading: 'eager', sizes: '240px', widths: '240, 480' }}
   {%- else -%}
-    <span class="wordmark" aria-hidden="true">Horn<span class="wordmark__accent">Hub</span><span class="wordmark__dot"></span></span>
+    <span class="wordmark" aria-hidden="true"><span class="wordmark__the">The</span>Viral<span class="wordmark__accent">Horn</span><span class="wordmark__dot"></span></span>
   {%- endif -%}
 </a>

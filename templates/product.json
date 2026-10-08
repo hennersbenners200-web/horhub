@@ -363,15 +363,15 @@
         "faq-question-1": {
           "type": "question",
           "settings": {
-            "question": "Will HornHub work with my car?",
-            "answer": "<p>HornHub is designed for vehicles with a 12V electrical system, which covers most cars, vans and pickups. If you're unsure, contact us with your make, model and year before ordering and we'll confirm.</p>"
+            "question": "Will the Viral Horn work with my car?",
+            "answer": "<p>The Viral Horn is designed for vehicles with a 12V electrical system, which covers most cars, vans and pickups. If you're unsure, contact us with your make, model and year before ordering and we'll confirm.</p>"
           }
         },
         "faq-question-2": {
           "type": "question",
           "settings": {
             "question": "How hard is it to install?",
-            "answer": "<p>HornHub is designed for simple installation. It connects to your car's 12V supply and works alongside your existing horn. If you're not confident with car electrics, any auto electrician can fit it for you.</p>"
+            "answer": "<p>The Viral Horn is designed for simple installation. It connects to your car's 12V supply and works alongside your existing horn. If you're not confident with car electrics, any auto electrician can fit it for you.</p>"
           }
         },
         "faq-question-3": {
@@ -406,14 +406,14 @@
           "type": "question",
           "settings": {
             "question": "Does it replace my factory horn?",
-            "answer": "<p>No. HornHub is installed alongside your original horn, which keeps working as normal. That means you always have your standard horn available.</p>"
+            "answer": "<p>No. The Viral Horn is installed alongside your original horn, which keeps working as normal. That means you always have your standard horn available.</p>"
           }
         },
         "faq-question-8": {
           "type": "question",
           "settings": {
             "question": "Is it legal to use?",
-            "answer": "<p>Rules on vehicle horns and sound devices vary by country, state and region. In many places, horns may only be used to warn other road users, and some sounds or volumes are restricted on public roads. HornHub is very loud (up to 130dB), so use it considerately and never near people's ears. Please check your local regulations before installing or using it. You are responsible for using it lawfully.</p>"
+            "answer": "<p>Rules on vehicle horns and sound devices vary by country, state and region. In many places, horns may only be used to warn other road users, and some sounds or volumes are restricted on public roads. The Viral Horn is very loud (up to 130dB), so use it considerately and never near people's ears. Please check your local regulations before installing or using it. You are responsible for using it lawfully.</p>"
           }
         },
         "faq-question-9": {

@@ -76,7 +76,7 @@
       ],
       "settings": {
         "scheme": "dark",
-        "label": "Why buy from HornHub"
+        "label": "Why buy from The Viral Horn"
       }
     },
     "problem-solution": {
@@ -89,7 +89,7 @@
         "before_label": "Stock horn",
         "before_title": "One tone. Zero personality.",
         "before_points": "The same note as millions of other cars\nNo way to change it without rewiring\nSays nothing about you or your build",
-        "after_label": "With HornHub",
+        "after_label": "With Viral Horn",
         "after_title": "Any sound. Your call.",
         "after_points": "Load your own MP3 or WAV sounds\nFire them from a wireless 4-button remote\nWorks alongside your existing horn"
       }
@@ -151,7 +151,7 @@
         "anchor": "product",
         "product": "",
         "image": "shopify://shop_images/Hornhub1.png",
-        "eyebrow": "Meet HornHub",
+        "eyebrow": "Meet the Viral Horn",
         "heading": "A horn you program like a playlist.",
         "text": "A powerful 130dB horn unit that plays the sounds you load onto it, and a wireless 4-button remote that puts them at your fingertips."
       }
@@ -306,7 +306,7 @@
         "eyebrow": "Sound customisation",
         "heading": "Pick a vibe. Change it tomorrow.",
         "text": "A quick laugh at the lights, full send at the meet. Load the sounds you love and change them whenever you want.",
-        "note": "Sound names are examples of what you could load. HornHub plays the MP3 or WAV files you put on it.",
+        "note": "Sound names are examples of what you could load. The Viral Horn plays the MP3 or WAV files you put on it.",
         "stat_a_value": "MP3 + WAV",
         "stat_a_label": "Load your own files",
         "stat_b_value": "130dB",
@@ -319,7 +319,7 @@
         "lifestyle-tile-1": {
           "type": "tile",
           "settings": {
-            "alt": "Lowered hatchback at a night car meet under orange street lights, driver holding the HornHub remote.",
+            "alt": "Lowered hatchback at a night car meet under orange street lights, driver holding the Viral Horn remote.",
             "placeholder_file": "lifestyle-night-meet.jpg (1600 × 2000px)",
             "title": "The meet",
             "caption": "Turn heads before you've even parked"
@@ -328,7 +328,7 @@
         "lifestyle-tile-2": {
           "type": "tile",
           "settings": {
-            "alt": "HornHub wireless 4-button remote held near the steering wheel, close-up.",
+            "alt": "Viral Horn wireless 4-button remote held near the steering wheel, close-up.",
             "placeholder_file": "lifestyle-remote-wheel.jpg (1200 × 1500px)",
             "title": "Within reach",
             "caption": "Four buttons at your fingertips"
@@ -337,7 +337,7 @@
         "lifestyle-tile-3": {
           "type": "tile",
           "settings": {
-            "alt": "Open bonnet showing the HornHub horn unit installed in the engine bay.",
+            "alt": "Open bonnet showing the Viral Horn unit installed in the engine bay.",
             "placeholder_file": "lifestyle-engine-bay.jpg (1200 × 1500px)",
             "title": "Clean install",
             "caption": "Tucked away under the bonnet"
@@ -346,7 +346,7 @@
         "lifestyle-tile-4": {
           "type": "tile",
           "settings": {
-            "alt": "Two friends laughing in a parked car while one presses the HornHub remote.",
+            "alt": "Two friends laughing in a parked car while one presses the Viral Horn remote.",
             "placeholder_file": "lifestyle-friends-remote.jpg (1200 × 1500px)",
             "title": "Share the joke",
             "caption": "Swap sounds whenever you like"
@@ -373,9 +373,9 @@
         "scheme": "dark",
         "eyebrow": "Built for car culture",
         "heading": "Made for meets, cruises and the daily drive.",
-        "text": "Whether it's a slammed hatch, a weekend track toy or the family wagon, HornHub gives it a voice that matches the build.",
+        "text": "Whether it's a slammed hatch, a weekend track toy or the family wagon, the Viral Horn gives it a voice that matches the build.",
         "footer_text": "Tag your install for a chance to be featured.",
-        "footer_link_label": "Follow HornHub",
+        "footer_link_label": "Follow The Viral Horn",
         "footer_link": ""
       }
     },
@@ -419,7 +419,7 @@
           "settings": {
             "icon": "shield",
             "title": "Factory horn stays",
-            "text": "HornHub adds a second voice. Your original horn keeps working exactly as before."
+            "text": "The Viral Horn adds a second voice. Your original horn keeps working exactly as before."
           }
         },
         "features-grid-feature-6": {
@@ -441,7 +441,7 @@
       ],
       "settings": {
         "scheme": "light",
-        "eyebrow": "Why HornHub",
+        "eyebrow": "Why Viral Horn",
         "heading": "Engineered to be fun. Built to last.",
         "text": ""
       }
@@ -509,10 +509,10 @@
       "settings": {
         "scheme": "dark",
         "eyebrow": "The difference",
-        "heading": "Standard horn vs HornHub",
+        "heading": "Standard horn vs Viral Horn",
         "text": "",
         "them_label": "Standard horn",
-        "us_label": "HornHub",
+        "us_label": "Viral Horn",
         "button_label": "Upgrade your horn",
         "button_link": ""
       }
@@ -576,15 +576,15 @@
         "faq-question-1": {
           "type": "question",
           "settings": {
-            "question": "Will HornHub work with my car?",
-            "answer": "<p>HornHub is designed for vehicles with a 12V electrical system, which covers most cars, vans and pickups. If you're unsure, contact us with your make, model and year before ordering and we'll confirm.</p>"
+            "question": "Will the Viral Horn work with my car?",
+            "answer": "<p>The Viral Horn is designed for vehicles with a 12V electrical system, which covers most cars, vans and pickups. If you're unsure, contact us with your make, model and year before ordering and we'll confirm.</p>"
           }
         },
         "faq-question-2": {
           "type": "question",
           "settings": {
             "question": "How hard is it to install?",
-            "answer": "<p>HornHub is designed for simple installation. It connects to your car's 12V supply and works alongside your existing horn. If you're not confident with car electrics, any auto electrician can fit it for you.</p>"
+            "answer": "<p>The Viral Horn is designed for simple installation. It connects to your car's 12V supply and works alongside your existing horn. If you're not confident with car electrics, any auto electrician can fit it for you.</p>"
           }
         },
         "faq-question-3": {
@@ -619,14 +619,14 @@
           "type": "question",
           "settings": {
             "question": "Does it replace my factory horn?",
-            "answer": "<p>No. HornHub is installed alongside your original horn, which keeps working as normal. That means you always have your standard horn available.</p>"
+            "answer": "<p>No. The Viral Horn is installed alongside your original horn, which keeps working as normal. That means you always have your standard horn available.</p>"
           }
         },
         "faq-question-8": {
           "type": "question",
           "settings": {
             "question": "Is it legal to use?",
-            "answer": "<p>Rules on vehicle horns and sound devices vary by country, state and region. In many places, horns may only be used to warn other road users, and some sounds or volumes are restricted on public roads. HornHub is very loud (up to 130dB), so use it considerately and never near people's ears. Please check your local regulations before installing or using it. You are responsible for using it lawfully.</p>"
+            "answer": "<p>Rules on vehicle horns and sound devices vary by country, state and region. In many places, horns may only be used to warn other road users, and some sounds or volumes are restricted on public roads. The Viral Horn is very loud (up to 130dB), so use it considerately and never near people's ears. Please check your local regulations before installing or using it. You are responsible for using it lawfully.</p>"
           }
         },
         "faq-question-9": {

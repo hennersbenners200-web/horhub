@@ -1,6 +1,6 @@
-# HornHub Shopify theme
+# The Viral Horn Shopify theme
 
-A custom Shopify Online Store 2.0 theme for **HornHub**, which sells wireless programmable car horns.
+A custom Shopify Online Store 2.0 theme for **The Viral Horn**, which sells wireless programmable car horns.
 
 It's built to sell one hero product: a dark, premium automotive look with orange accents, a slide-out cart, a sticky buy bar on mobile, and every piece of text, image and setting editable in Shopify's theme editor. Prices, images, variants, stock, cart and checkout all come from your store, so nothing about the product itself is hardcoded.
 
@@ -42,7 +42,7 @@ Do these in Shopify admin, in this order.
 
 **Products → Add product**
 
-- **Title**, for example *HornHub Wireless Programmable Horn*
+- **Title**, for example *The Viral Horn*
 - **Price**, plus **Compare-at price** if you're running a genuine discount (the theme then shows the saving automatically)
 - **Media**: upload at least 4 square photos (2000 × 2000px). The first one is the main image.
 - **Description**: shown in the "Description" tab on the product page
@@ -92,7 +92,7 @@ Every image slot shows a labelled placeholder with a **suggested filename, size 
 
 | Where | Suggested file | Size |
 | --- | --- | --- |
-| Hero | `hero-hornhub-kit.jpg` | 1600 × 2000 |
+| Hero | `hero-viral-horn-kit.jpg` | 1600 × 2000 |
 | Product showcase | `showcase-horn-unit.jpg` | 1800 × 1800 |
 | How it works (×4) | `step-1-connect.jpg` … `step-4-use-it.jpg` | 1200 × 900 |
 | Sound lab | `sound-remote-in-hand.jpg` | 1800 × 1800 |

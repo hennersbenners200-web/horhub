@@ -1,4 +1,4 @@
-/* HornHub theme — progressive enhancement.
+/* Viral Horn theme — progressive enhancement.
    Every component works as a plain link/form without JavaScript;
    these custom elements make it faster and smoother. */
 
