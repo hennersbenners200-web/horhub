@@ -47,6 +47,10 @@
     "review_count": {
       "one": "{{ count }} review",
       "other": "{{ count }} reviews"
+    },
+    "recent_sales_count": {
+      "one": "{{ count }} person",
+      "other": "{{ count }} people"
     }
   },
   "cart": {

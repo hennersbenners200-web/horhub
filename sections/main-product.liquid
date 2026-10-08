@@ -79,6 +79,16 @@
               </a>
             {%- endif -%}
 
+          {%- when 'recent_sales' -%}
+            {%- assign sales_count = block.settings.count | times: 1 -%}
+            {%- if sales_count > 0 -%}
+              <p class="recent-sales" {{ block.shopify_attributes }}>
+                <span class="recent-sales__pulse" aria-hidden="true"></span>
+                {%- if block.settings.icon != 'none' -%}{% render 'icon', name: block.settings.icon %}{%- endif -%}
+                <span><strong>{{ 'products.recent_sales_count' | t: count: sales_count }}</strong> {{ block.settings.text }}</span>
+              </p>
+            {%- endif -%}
+
           {%- when 'price' -%}
             <div class="product-info__price" data-variant-region="{{ section.id }}" data-region="price" {{ block.shopify_attributes }}>
               {% render 'price', product: product, variant: current_variant, size: 'lg' %}
@@ -243,6 +253,31 @@
     { "type": "title", "name": "Title", "limit": 1 },
     { "type": "rating", "name": "Rating", "limit": 1, "settings": [{ "type": "paragraph", "content": "Shows the rating your reviews app publishes to this product." }] },
     { "type": "price", "name": "Price", "limit": 1 },
+    {
+      "type": "recent_sales",
+      "name": "Recent sales badge",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Only enter a real figure from Analytics → Reports. Showing a made-up purchase count is illegal under UK consumer law (DMCC Act 2024). The badge stays hidden while the number is empty or 0."
+        },
+        { "type": "number", "id": "count", "label": "Number of people who bought" },
+        { "type": "text", "id": "text", "label": "Text after the number", "default": "bought in the last month" },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "none", "label": "None" },
+            { "value": "cart", "label": "Bag" },
+            { "value": "star", "label": "Star" },
+            { "value": "bolt", "label": "Bolt" }
+          ],
+          "default": "none"
+        }
+      ]
+    },
     {
       "type": "text",
       "name": "Text",

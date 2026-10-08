@@ -65,6 +65,22 @@
 .product-info__secure { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 10px; font-size: 0.8125rem; color: var(--c-text-muted); }
 .product-info__secure .icon { width: 14px; height: 14px; }
 
+/* Recent sales badge */
+.recent-sales {
+  display: inline-flex; align-items: center; gap: 10px; width: fit-content;
+  padding: 9px 16px 9px 14px; border-radius: var(--radius-pill);
+  background: rgb(var(--c-accent-rgb) / 0.1); border: 1px solid rgb(var(--c-accent-rgb) / 0.3);
+  font-size: 0.875rem; color: var(--c-text);
+}
+.recent-sales strong { color: var(--c-accent); font-weight: 700; }
+.recent-sales .icon { width: 16px; height: 16px; color: var(--c-accent); }
+.recent-sales__pulse { position: relative; width: 8px; height: 8px; border-radius: 50%; background: var(--c-accent); flex: none; }
+.recent-sales__pulse::after {
+  content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--c-accent);
+  animation: pulse 1.8s ease-out infinite;
+}
+@keyframes pulse { from { transform: scale(1); opacity: 0.7; } to { transform: scale(2.8); opacity: 0; } }
+
 /* Variant picker */
 .variant-picker { display: grid; gap: 18px; }
 .variant-picker__option { border: 0; padding: 0; min-width: 0; }

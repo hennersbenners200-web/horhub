@@ -73,6 +73,13 @@
         "legal": {
           "type": "legal",
           "settings": {}
+        },
+        "recent-sales": {
+          "type": "recent_sales",
+          "settings": {
+            "text": "bought in the last month",
+            "icon": "none"
+          }
         }
       },
       "block_order": [
@@ -80,6 +87,7 @@
         "title",
         "rating",
         "price",
+        "recent-sales",
         "text",
         "highlights",
         "variant-picker",
