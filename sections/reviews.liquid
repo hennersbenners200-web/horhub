@@ -15,7 +15,13 @@
       assign has_placeholders = true
     endif
   endfor
+  assign has_content = false
+  if section.blocks.size > 0 or rating != blank
+    assign has_content = true
+  endif
 -%}
+{%- comment -%} Nothing to show until real reviews exist — except a hint inside the theme editor {%- endcomment -%}
+{%- if has_content or request.design_mode -%}
 <section class="section scheme-{{ section.settings.scheme }}" id="{{ section.settings.anchor | default: section.id }}" aria-labelledby="Heading-{{ section.id }}">
   <div class="container">
     <div class="section-head">
@@ -68,6 +74,10 @@
       </ul>
     {%- endif -%}
 
+    {%- unless has_content -%}
+      <p class="muted">{{ 'sections.reviews_empty_editor' | t }}</p>
+    {%- endunless -%}
+
     {%- for block in section.blocks -%}
       {%- if block.type == '@app' -%}
         <div class="reviews__app" {{ block.shopify_attributes }}>{% render block %}</div>
@@ -75,6 +85,7 @@
     {%- endfor -%}
   </div>
 </section>
+{%- endif -%}
 
 {% schema %}
 {

@@ -133,6 +133,7 @@
     "no": "Not included",
     "placeholder": "Placeholder",
     "placeholder_reviews_notice": "Example reviews shown for layout only. They are not from real customers and will be replaced with genuine reviews.",
-    "verified_buyer": "Verified buyer"
+    "verified_buyer": "Verified buyer",
+    "reviews_empty_editor": "This section is hidden on your store until you add a reviews app block or a genuine review."
   }
 }
