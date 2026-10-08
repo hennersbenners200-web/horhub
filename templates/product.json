@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -5,7 +14,9 @@
       "blocks": {
         "eyebrow": {
           "type": "eyebrow",
-          "settings": {}
+          "settings": {
+            "text": "Wireless programmable car horn"
+          }
         },
         "title": {
           "type": "title",
@@ -19,13 +30,24 @@
           "type": "price",
           "settings": {}
         },
+        "recent-sales": {
+          "type": "recent_sales",
+          "settings": {
+            "text": "bought in the last month",
+            "icon": "none"
+          }
+        },
         "text": {
           "type": "text",
-          "settings": {}
+          "settings": {
+            "text": "<p>Swap the flat factory beep for any sound you want. Load your own MP3s and fire them from a wireless 4-button remote at up to 130dB.</p>"
+          }
         },
         "highlights": {
           "type": "highlights",
-          "settings": {}
+          "settings": {
+            "items": "Load your own MP3 or WAV sounds via USB\nWireless 4-button remote\nPowerful 130dB output\nWorks alongside your existing horn\nDesigned for 12V vehicles"
+          }
         },
         "variant-picker": {
           "type": "variant_picker",
@@ -33,15 +55,32 @@
         },
         "buy-buttons": {
           "type": "buy_buttons",
-          "settings": {}
+          "settings": {
+            "show_quantity": true,
+            "show_dynamic_checkout": true,
+            "trust_note": "Secure checkout · Encrypted payment"
+          }
         },
         "trust-badges": {
           "type": "trust_badges",
-          "settings": {}
+          "settings": {
+            "icon_1": "truck",
+            "title_1": "Free shipping",
+            "text_1": "Tracked delivery",
+            "icon_2": "return",
+            "title_2": "30-day returns",
+            "text_2": "Hassle-free",
+            "icon_3": "shield",
+            "title_3": "12-month warranty",
+            "text_3": "Covered for defects"
+          }
         },
         "delivery": {
           "type": "delivery",
-          "settings": {}
+          "settings": {
+            "title": "Order today, dispatched within 1 working day",
+            "text": "Tracked delivery. Exact delivery estimate shown at checkout."
+          }
         },
         "collapsible": {
           "type": "collapsible",
@@ -49,6 +88,8 @@
             "heading": "Description",
             "icon": "info",
             "source": "description",
+            "content": "",
+            "page": "",
             "open": false
           }
         },
@@ -58,7 +99,9 @@
             "heading": "Installation",
             "icon": "wrench",
             "source": "custom",
-            "content": "<p>Fit the horn unit in the engine bay and connect it to your car's 12V supply. It's designed to work alongside your existing horn, which keeps working as normal. If you're not confident with car electrics, any auto electrician can fit it for you.</p>"
+            "content": "<p>Fit the horn unit in the engine bay and connect it to your car's 12V supply. It's designed to work alongside your existing horn, which keeps working as normal. If you're not confident with car electrics, any auto electrician can fit it for you.</p>",
+            "page": "",
+            "open": false
           }
         },
         "collapsible-3": {
@@ -67,18 +110,15 @@
             "heading": "Shipping & returns",
             "icon": "truck",
             "source": "custom",
-            "content": "<p>Orders are dispatched within 1 working day with tracking. Delivery options and costs for your address are shown at checkout.</p><p>Not for you? Return it within 30 days of delivery. Contact us to start a return.</p>"
+            "content": "<p>Orders are dispatched within 1 working day with tracking. Delivery options and costs for your address are shown at checkout.</p><p>Not for you? Return it within 30 days of delivery. Contact us to start a return.</p>",
+            "page": "",
+            "open": false
           }
         },
         "legal": {
           "type": "legal",
-          "settings": {}
-        },
-        "recent-sales": {
-          "type": "recent_sales",
           "settings": {
-            "text": "bought in the last month",
-            "icon": "none"
+            "text": ""
           }
         }
       },
@@ -103,11 +143,6 @@
     },
     "how-it-works": {
       "type": "how-it-works",
-      "settings": {
-        "scheme": "surface",
-        "button_label": "",
-        "anchor": "how-it-works"
-      },
       "blocks": {
         "how-it-works-step-1": {
           "type": "step",
@@ -151,38 +186,63 @@
         "how-it-works-step-2",
         "how-it-works-step-3",
         "how-it-works-step-4"
-      ]
+      ],
+      "settings": {
+        "scheme": "surface",
+        "anchor": "how-it-works",
+        "eyebrow": "How it works",
+        "heading": "From box to beep in four steps.",
+        "text": "Load it. Install it. Press it. Make it yours.",
+        "show_images": true,
+        "button_label": "",
+        "button_link": "",
+        "note": "Not confident with car electrics? Any auto electrician can fit it for you."
+      }
     },
     "product-specs": {
       "type": "product-specs",
-      "settings": {
-        "scheme": "dark"
-      },
       "blocks": {
         "product-specs-included-1": {
           "type": "included",
-          "settings": {}
+          "settings": {
+            "title": "In the box",
+            "icon": "box",
+            "items": "1×|Viral Horn unit\n1×|Wireless 4-button remote"
+          }
         },
         "product-specs-specs-2": {
           "type": "specs",
-          "settings": {}
+          "settings": {
+            "title": "Specifications",
+            "icon": "gauge",
+            "items": "Output: Up to 130dB\nSounds: Your own MP3 or WAV files\nLoading: Via USB\nControl: Wireless 4-button remote\nPower: 12V vehicle supply\nInstallation: Alongside your existing horn"
+          }
         },
         "product-specs-card-3": {
           "type": "card",
-          "settings": {}
+          "settings": {
+            "title": "Compatibility",
+            "icon": "car",
+            "text": "<p>Designed for cars, vans and pickups with a 12V electrical system. Not sure about yours? Send us your make, model and year.</p>",
+            "link_label": "",
+            "link": ""
+          }
         }
       },
       "block_order": [
         "product-specs-included-1",
         "product-specs-specs-2",
         "product-specs-card-3"
-      ]
+      ],
+      "settings": {
+        "scheme": "dark",
+        "anchor": "specs",
+        "eyebrow": "The details",
+        "heading": "What you get, and what it fits."
+      }
     },
     "sound-lab": {
       "type": "sound-lab",
-      "settings": {
-        "scheme": "dark"
-      },
       "blocks": {
         "sound-lab-category-1": {
           "type": "category",
@@ -191,12 +251,16 @@
             "icon": "car",
             "sound_1_name": "Dual-tone European",
             "sound_1_meta": "Deep, clean, unmistakably premium",
+            "sound_1_audio": "",
             "sound_2_name": "Truck air horn",
             "sound_2_meta": "Big-rig energy for small cars",
+            "sound_2_audio": "",
             "sound_3_name": "Vintage bulb",
             "sound_3_meta": "Old-school charm",
+            "sound_3_audio": "",
             "sound_4_name": "Chirp",
-            "sound_4_meta": "A short, friendly hello"
+            "sound_4_meta": "A short, friendly hello",
+            "sound_4_audio": ""
           }
         },
         "sound-lab-category-2": {
@@ -206,12 +270,16 @@
             "icon": "star",
             "sound_1_name": "Goat",
             "sound_1_meta": "Guaranteed double-take",
+            "sound_1_audio": "",
             "sound_2_name": "Duck squad",
             "sound_2_meta": "For the school run",
+            "sound_2_audio": "",
             "sound_3_name": "Cartoon boing",
             "sound_3_meta": "Pure comedy",
+            "sound_3_audio": "",
             "sound_4_name": "Sad trombone",
-            "sound_4_meta": "When someone misses the green light"
+            "sound_4_meta": "When someone misses the green light",
+            "sound_4_audio": ""
           }
         },
         "sound-lab-category-3": {
@@ -221,12 +289,16 @@
             "icon": "music",
             "sound_1_name": "Victory fanfare",
             "sound_1_meta": "Arrive like you won",
+            "sound_1_audio": "",
             "sound_2_name": "Doorbell",
             "sound_2_meta": "Ding-dong, I'm outside",
+            "sound_2_audio": "",
             "sound_3_name": "Arcade level-up",
             "sound_3_meta": "8-bit nostalgia",
+            "sound_3_audio": "",
             "sound_4_name": "Game show win",
-            "sound_4_meta": "For parking-spot victories"
+            "sound_4_meta": "For parking-spot victories",
+            "sound_4_audio": ""
           }
         },
         "sound-lab-category-4": {
@@ -236,10 +308,16 @@
             "icon": "phone",
             "sound_1_name": "Your voice",
             "sound_1_meta": "Record a catchphrase and save it as an MP3",
+            "sound_1_audio": "",
             "sound_2_name": "Any MP3 or WAV",
             "sound_2_meta": "Copy it across via USB",
+            "sound_2_audio": "",
             "sound_3_name": "",
-            "sound_3_meta": ""
+            "sound_3_meta": "",
+            "sound_3_audio": "",
+            "sound_4_name": "",
+            "sound_4_meta": "",
+            "sound_4_audio": ""
           }
         }
       },
@@ -248,14 +326,22 @@
         "sound-lab-category-2",
         "sound-lab-category-3",
         "sound-lab-category-4"
-      ]
+      ],
+      "settings": {
+        "scheme": "dark",
+        "anchor": "sounds",
+        "eyebrow": "Sound customisation",
+        "heading": "Pick a vibe. Change it tomorrow.",
+        "text": "A quick laugh at the lights, full send at the meet. Load the sounds you love and change them whenever you want.",
+        "note": "Sound names are examples of what you could load. The Viral Horn plays the MP3 or WAV files you put on it.",
+        "stat_a_value": "MP3 + WAV",
+        "stat_a_label": "Load your own files",
+        "stat_b_value": "130dB",
+        "stat_b_label": "Built to be heard"
+      }
     },
     "comparison": {
       "type": "comparison",
-      "settings": {
-        "scheme": "surface",
-        "button_label": ""
-      },
       "blocks": {
         "comparison-row-1": {
           "type": "row",
@@ -313,13 +399,20 @@
         "comparison-row-4",
         "comparison-row-5",
         "comparison-row-6"
-      ]
+      ],
+      "settings": {
+        "scheme": "surface",
+        "eyebrow": "The difference",
+        "heading": "Standard horn vs Viral Horn",
+        "text": "",
+        "them_label": "Standard horn",
+        "us_label": "Viral Horn",
+        "button_label": "",
+        "button_link": ""
+      }
     },
     "reviews": {
       "type": "reviews",
-      "settings": {
-        "scheme": "dark"
-      },
       "blocks": {
         "reviews-review-1": {
           "type": "review",
@@ -329,7 +422,8 @@
             "title": "Placeholder: install experience",
             "body": "<p>Replace this with a real customer review about how easy installation was. Keep the reviewer's own words.</p>",
             "author": "Sample customer",
-            "detail": "Car model · Location"
+            "detail": "Car model · Location",
+            "verified": false
           }
         },
         "reviews-review-2": {
@@ -340,7 +434,8 @@
             "title": "Placeholder: favourite sound",
             "body": "<p>Replace this with a real review describing the sounds a customer loves and the reactions they get.</p>",
             "author": "Sample customer",
-            "detail": "Car model · Location"
+            "detail": "Car model · Location",
+            "verified": false
           }
         },
         "reviews-review-3": {
@@ -351,7 +446,8 @@
             "title": "Placeholder: build quality",
             "body": "<p>Replace this with a real review about build quality, the volume or the wireless remote.</p>",
             "author": "Sample customer",
-            "detail": "Car model · Location"
+            "detail": "Car model · Location",
+            "verified": false
           }
         }
       },
@@ -359,14 +455,17 @@
         "reviews-review-1",
         "reviews-review-2",
         "reviews-review-3"
-      ]
+      ],
+      "settings": {
+        "scheme": "dark",
+        "anchor": "reviews",
+        "eyebrow": "Reviews",
+        "heading": "Heard it from the drivers.",
+        "product": "viral-horn™"
+      }
     },
     "faq": {
       "type": "faq",
-      "settings": {
-        "scheme": "surface",
-        "structured_data": true
-      },
       "blocks": {
         "faq-question-1": {
           "type": "question",
@@ -450,7 +549,20 @@
         "faq-question-8",
         "faq-question-9",
         "faq-question-10"
-      ]
+      ],
+      "settings": {
+        "scheme": "surface",
+        "anchor": "faq",
+        "eyebrow": "FAQ",
+        "heading": "Questions, answered.",
+        "text": "Everything you need to know before you order.",
+        "open_first": false,
+        "structured_data": true,
+        "contact_heading": "Still not sure?",
+        "contact_text": "Send us your car's make, model and year and we'll confirm the fit.",
+        "contact_label": "Ask our team",
+        "contact_link": ""
+      }
     }
   },
   "order": [
