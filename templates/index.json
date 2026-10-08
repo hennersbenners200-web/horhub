@@ -105,14 +105,6 @@
             "text": "Trigger your sounds instantly. No wires to run into the cabin."
           }
         },
-        "feature_eiYUfV": {
-          "type": "feature",
-          "settings": {
-            "icon": "wireless",
-            "title": "Wireless 4-button remote",
-            "text": "Trigger your sounds instantly. No wires to run into the cabin."
-          }
-        },
         "product-showcase-feature-2": {
           "type": "feature",
           "settings": {
@@ -148,7 +140,6 @@
       },
       "block_order": [
         "product-showcase-feature-1",
-        "feature_eiYUfV",
         "product-showcase-feature-2",
         "product-showcase-feature-3",
         "product-showcase-feature-4",
@@ -322,72 +313,6 @@
         "stat_b_label": "Built to be heard"
       }
     },
-    "lifestyle": {
-      "type": "lifestyle",
-      "blocks": {
-        "lifestyle-tile-1": {
-          "type": "tile",
-          "settings": {
-            "alt": "Lowered hatchback at a night car meet under orange street lights, driver holding the Viral Horn remote.",
-            "placeholder_file": "lifestyle-night-meet.jpg (1600 × 2000px)",
-            "title": "The meet",
-            "caption": "Turn heads before you've even parked"
-          }
-        },
-        "lifestyle-tile-2": {
-          "type": "tile",
-          "settings": {
-            "alt": "Viral Horn wireless 4-button remote held near the steering wheel, close-up.",
-            "placeholder_file": "lifestyle-remote-wheel.jpg (1200 × 1500px)",
-            "title": "Within reach",
-            "caption": "Four buttons at your fingertips"
-          }
-        },
-        "lifestyle-tile-3": {
-          "type": "tile",
-          "settings": {
-            "alt": "Open bonnet showing the Viral Horn unit installed in the engine bay.",
-            "placeholder_file": "lifestyle-engine-bay.jpg (1200 × 1500px)",
-            "title": "Clean install",
-            "caption": "Tucked away under the bonnet"
-          }
-        },
-        "lifestyle-tile-4": {
-          "type": "tile",
-          "settings": {
-            "alt": "Two friends laughing in a parked car while one presses the Viral Horn remote.",
-            "placeholder_file": "lifestyle-friends-remote.jpg (1200 × 1500px)",
-            "title": "Share the joke",
-            "caption": "Swap sounds whenever you like"
-          }
-        },
-        "lifestyle-tile-5": {
-          "type": "tile",
-          "settings": {
-            "alt": "Sports car on an empty coastal road at golden hour, rear three-quarter view.",
-            "placeholder_file": "lifestyle-coastal-drive.jpg (1200 × 1500px)",
-            "title": "Daily driver",
-            "caption": "Fun every single journey"
-          }
-        }
-      },
-      "block_order": [
-        "lifestyle-tile-1",
-        "lifestyle-tile-2",
-        "lifestyle-tile-3",
-        "lifestyle-tile-4",
-        "lifestyle-tile-5"
-      ],
-      "settings": {
-        "scheme": "dark",
-        "eyebrow": "Built for car culture",
-        "heading": "Made for meets, cruises and the daily drive.",
-        "text": "Whether it's a slammed hatch, a weekend track toy or the family wagon, the Viral Horn gives it a voice that matches the build.",
-        "footer_text": "Tag your install for a chance to be featured.",
-        "footer_link_label": "Follow The Viral Horn",
-        "footer_link": ""
-      }
-    },
     "features-grid": {
       "type": "features-grid",
       "blocks": {
@@ -449,7 +374,7 @@
         "features-grid-feature-6"
       ],
       "settings": {
-        "scheme": "light",
+        "scheme": "dark",
         "eyebrow": "Why Viral Horn",
         "heading": "Engineered to be fun. Built to last.",
         "text": ""
@@ -532,7 +457,7 @@
         "reviews-review-1": {
           "type": "review",
           "settings": {
-            "placeholder": true,
+            "placeholder": false,
             "rating": 5,
             "title": "Placeholder: install experience",
             "body": "<p>Replace this with a real customer review about how easy installation was. Keep the reviewer's own words.</p>",
@@ -544,7 +469,7 @@
         "reviews-review-2": {
           "type": "review",
           "settings": {
-            "placeholder": true,
+            "placeholder": false,
             "rating": 5,
             "title": "Placeholder: favourite sound",
             "body": "<p>Replace this with a real review describing the sounds a customer loves and the reactions they get.</p>",
@@ -556,7 +481,7 @@
         "reviews-review-3": {
           "type": "review",
           "settings": {
-            "placeholder": true,
+            "placeholder": false,
             "rating": 5,
             "title": "Placeholder: build quality",
             "body": "<p>Replace this with a real review about build quality, the volume or the wireless remote.</p>",
@@ -684,6 +609,7 @@
       "settings": {
         "scheme": "dark",
         "product": "",
+        "image": "shopify://shop_images/Hornhub1.png",
         "eyebrow": "Ready when you are",
         "heading": "Give your car something to say.",
         "text": "A 130dB horn unit and a wireless 4-button remote, ready for your own sounds. Order now and give your car a voice of its own.",
@@ -699,7 +625,6 @@
     "product-showcase",
     "how-it-works",
     "sound-lab",
-    "lifestyle",
     "features-grid",
     "comparison",
     "reviews",
