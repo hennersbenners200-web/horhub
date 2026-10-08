@@ -528,6 +528,49 @@
     },
     "reviews": {
       "type": "reviews",
+      "blocks": {
+        "reviews-review-1": {
+          "type": "review",
+          "settings": {
+            "placeholder": true,
+            "rating": 5,
+            "title": "Placeholder: install experience",
+            "body": "<p>Replace this with a real customer review about how easy installation was. Keep the reviewer's own words.</p>",
+            "author": "Sample customer",
+            "detail": "Car model · Location",
+            "verified": false
+          }
+        },
+        "reviews-review-2": {
+          "type": "review",
+          "settings": {
+            "placeholder": true,
+            "rating": 5,
+            "title": "Placeholder: favourite sound",
+            "body": "<p>Replace this with a real review describing the sounds a customer loves and the reactions they get.</p>",
+            "author": "Sample customer",
+            "detail": "Car model · Location",
+            "verified": false
+          }
+        },
+        "reviews-review-3": {
+          "type": "review",
+          "settings": {
+            "placeholder": true,
+            "rating": 5,
+            "title": "Placeholder: build quality",
+            "body": "<p>Replace this with a real review about build quality, the volume or the wireless remote.</p>",
+            "author": "Sample customer",
+            "detail": "Car model · Location",
+            "verified": false
+          }
+        }
+      },
+      "block_order": [
+        "reviews-review-1",
+        "reviews-review-2",
+        "reviews-review-3"
+      ],
       "settings": {
         "scheme": "surface",
         "anchor": "reviews",
