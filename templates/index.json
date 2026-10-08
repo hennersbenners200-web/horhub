@@ -105,6 +105,14 @@
             "text": "Trigger your sounds instantly. No wires to run into the cabin."
           }
         },
+        "feature_eiYUfV": {
+          "type": "feature",
+          "settings": {
+            "icon": "wireless",
+            "title": "Wireless 4-button remote",
+            "text": "Trigger your sounds instantly. No wires to run into the cabin."
+          }
+        },
         "product-showcase-feature-2": {
           "type": "feature",
           "settings": {
@@ -140,6 +148,7 @@
       },
       "block_order": [
         "product-showcase-feature-1",
+        "feature_eiYUfV",
         "product-showcase-feature-2",
         "product-showcase-feature-3",
         "product-showcase-feature-4",
