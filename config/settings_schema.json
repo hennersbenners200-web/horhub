@@ -1,9 +1,9 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "HornHub",
+    "theme_name": "The Viral Horn",
     "theme_version": "1.0.0",
-    "theme_author": "HornHub",
+    "theme_author": "The Viral Horn",
     "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
     "theme_support_url": "https://help.shopify.com/manual/online-store/themes"
   },
@@ -14,7 +14,7 @@
         "type": "image_picker",
         "id": "logo",
         "label": "Logo",
-        "info": "Optional. Leave empty to use the HornHub text wordmark."
+        "info": "Optional. Leave empty to use the Viral Horn text wordmark."
       },
       {
         "type": "range",
@@ -30,7 +30,7 @@
         "type": "image_picker",
         "id": "favicon",
         "label": "Favicon",
-        "info": "Square PNG, at least 96 × 96px. Leave empty to use the built-in HornHub icon."
+        "info": "Square PNG, at least 96 × 96px. Leave empty to use the built-in Viral Horn icon."
       },
       {
         "type": "image_picker",
@@ -127,9 +127,9 @@
   {
     "name": "Social media",
     "settings": [
-      { "type": "text", "id": "social_instagram", "label": "Instagram URL", "placeholder": "https://instagram.com/hornhub" },
-      { "type": "text", "id": "social_tiktok", "label": "TikTok URL", "placeholder": "https://tiktok.com/@hornhub" },
-      { "type": "text", "id": "social_youtube", "label": "YouTube URL", "placeholder": "https://youtube.com/@hornhub" },
+      { "type": "text", "id": "social_instagram", "label": "Instagram URL", "placeholder": "https://instagram.com/theviralhorn" },
+      { "type": "text", "id": "social_tiktok", "label": "TikTok URL", "placeholder": "https://tiktok.com/@theviralhorn" },
+      { "type": "text", "id": "social_youtube", "label": "YouTube URL", "placeholder": "https://youtube.com/@theviralhorn" },
       { "type": "text", "id": "social_facebook", "label": "Facebook URL" },
       { "type": "text", "id": "social_x", "label": "X (Twitter) URL" }
     ]
@@ -141,14 +141,14 @@
         "type": "text",
         "id": "seo_brand_description",
         "label": "Brand description for search engines",
-        "default": "HornHub makes wireless programmable car horns. Load your own sounds, pair the wireless button and swap your stock horn tone in minutes."
+        "default": "The Viral Horn is a wireless programmable car horn. Load your own MP3 or WAV sounds and fire them from a wireless 4-button remote at up to 130dB."
       },
       {
         "type": "richtext",
         "id": "legal_notice",
         "label": "Horn use notice",
         "info": "Shown near the buy button and in the footer. Horn laws vary by country and region.",
-        "default": "<p>Horn and sound-device rules vary by country and region. Check your local regulations before installing or using HornHub on public roads.</p>"
+        "default": "<p>Horn and sound-device rules vary by country and region. Check your local regulations before installing or using the Viral Horn on public roads.</p>"
       }
     ]
   }

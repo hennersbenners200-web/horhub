@@ -42,57 +42,57 @@
         "faq-question-1": {
           "type": "question",
           "settings": {
-            "question": "Will HornHub work with my car?",
-            "answer": "<p>HornHub is designed for vehicles with a standard 12V electrical system, which covers most cars, vans and pickups. If you're unsure, contact us with your make, model and year before ordering and we'll confirm.</p>"
+            "question": "Will the Viral Horn work with my car?",
+            "answer": "<p>The Viral Horn is designed for vehicles with a 12V electrical system, which covers most cars, vans and pickups. If you're unsure, contact us with your make, model and year before ordering and we'll confirm.</p>"
           }
         },
         "faq-question-2": {
           "type": "question",
           "settings": {
             "question": "How hard is it to install?",
-            "answer": "<p>If you can locate your battery and use a screwdriver, you can install HornHub. The kit includes a wiring harness, inline fuse and a step-by-step guide. Most installs take 30–60 minutes. If you'd rather not do it yourself, any auto electrician can fit it quickly.</p>"
+            "answer": "<p>The Viral Horn is designed for simple installation. It connects to your car's 12V supply and works alongside your existing horn. If you're not confident with car electrics, any auto electrician can fit it for you.</p>"
           }
         },
         "faq-question-3": {
           "type": "question",
           "settings": {
-            "question": "How does the wireless button connect?",
-            "answer": "<p>The button pairs wirelessly with the horn unit, so there are no cables to run into the cabin. Pairing takes a minute during setup and the button reconnects automatically after that.</p>"
+            "question": "How does the wireless remote work?",
+            "answer": "<p>The 4-button remote talks to the horn unit wirelessly, so there are no cables to run into the cabin. Press a button and the sound you've chosen plays instantly.</p>"
           }
         },
         "faq-question-4": {
           "type": "question",
           "settings": {
             "question": "What powers it?",
-            "answer": "<p>The horn unit runs from your car's 12V supply using the included harness and fuse. The wireless button uses a replaceable coin-cell battery.</p>"
+            "answer": "<p>The horn unit runs from your car's 12V electrical supply.</p>"
           }
         },
         "faq-question-5": {
           "type": "question",
           "settings": {
             "question": "Can I use my own sounds?",
-            "answer": "<p>Yes. Choose from the built-in library or load your own short audio clips through the app, then assign them to the button. You can change sounds as often as you like.</p>"
+            "answer": "<p>Yes, that's the whole point. Load your own MP3 or WAV files via USB and trigger them from the wireless remote. Change them as often as you like.</p>"
           }
         },
         "faq-question-6": {
           "type": "question",
           "settings": {
-            "question": "Is it waterproof?",
-            "answer": "<p>The horn unit has a weather-sealed housing designed for the engine bay, where it's exposed to rain and road spray. It isn't designed to be submerged, and we recommend mounting it away from direct water jets when pressure washing.</p>"
+            "question": "Where should I mount it?",
+            "answer": "<p>Mount the horn unit in a protected spot in the engine bay, away from direct water spray and hot engine parts, and avoid pointing a pressure washer straight at it.</p>"
           }
         },
         "faq-question-7": {
           "type": "question",
           "settings": {
             "question": "Does it replace my factory horn?",
-            "answer": "<p>No. HornHub is installed alongside your original horn, which keeps working as normal. That means you always have your standard horn available.</p>"
+            "answer": "<p>No. The Viral Horn is installed alongside your original horn, which keeps working as normal. That means you always have your standard horn available.</p>"
           }
         },
         "faq-question-8": {
           "type": "question",
           "settings": {
             "question": "Is it legal to use?",
-            "answer": "<p>Rules on vehicle horns and sound devices vary by country, state and region. In many places, horns may only be used to warn other road users, and some sounds or volumes are restricted on public roads. Please check your local regulations before installing or using HornHub. You are responsible for using it lawfully and considerately.</p>"
+            "answer": "<p>Rules on vehicle horns and sound devices vary by country, state and region. In many places, horns may only be used to warn other road users, and some sounds or volumes are restricted on public roads. The Viral Horn is very loud (up to 130dB), so use it considerately and never near people's ears. Please check your local regulations before installing or using it. You are responsible for using it lawfully.</p>"
           }
         },
         "faq-question-9": {
