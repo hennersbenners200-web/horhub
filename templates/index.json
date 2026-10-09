@@ -156,59 +156,6 @@
         "text": "A powerful 130dB horn unit that plays the sounds you load onto it, and a wireless 4-button remote that puts them at your fingertips."
       }
     },
-    "reviews": {
-      "type": "reviews",
-      "blocks": {
-        "reviews-review-1": {
-          "type": "review",
-          "settings": {
-            "placeholder": false,
-            "rating": 5,
-            "title": "Easy install and sounds great",
-            "body": "<p>&nbsp;The installation was straightforward and the horn has a much deeper sound than the standard one.&nbsp;</p>",
-            "author": "Daz Wong",
-            "detail": "BMW 3 series-Sheffield",
-            "verified": false
-          }
-        },
-        "reviews-review-2": {
-          "type": "review",
-          "settings": {
-            "placeholder": false,
-            "rating": 5,
-            "title": "Great Upgrade",
-            "body": "<p>Really impressed with the quality. It was easy to fit and makes honking fun.</p>",
-            "author": "Phillip Gray",
-            "detail": "VW Golf- Manchester",
-            "verified": false
-          }
-        },
-        "reviews-review-3": {
-          "type": "review",
-          "settings": {
-            "placeholder": false,
-            "rating": 5,
-            "title": "Exactly what I wanted",
-            "body": "<p>Good quality horn and installation was pretty simple. It sounds much better than the factory horn and well made</p>",
-            "author": "Henry Joy",
-            "detail": "Audi A3- Sydney",
-            "verified": false
-          }
-        }
-      },
-      "block_order": [
-        "reviews-review-1",
-        "reviews-review-2",
-        "reviews-review-3"
-      ],
-      "settings": {
-        "scheme": "surface",
-        "anchor": "reviews",
-        "eyebrow": "Reviews",
-        "heading": "Heard it from the drivers.",
-        "product": "viral-horn™"
-      }
-    },
     "how-it-works": {
       "type": "how-it-works",
       "blocks": {
@@ -623,7 +570,6 @@
     "trust-strip",
     "problem-solution",
     "product-showcase",
-    "reviews",
     "how-it-works",
     "sound-lab",
     "features-grid",
